@@ -3,11 +3,10 @@ const { dbmysql } = require('./DataBase.ini') //数据库配置文件
 const { debug } = require('./config.js') //debug配置文件
 function connection() {
   return mysql.createConnection({
-    host: dbmysql.host,
-    user: dbmysql.user,
-    password: dbmysql.password,
-    database: dbmysql.database,
-    port: dbmysql.port,
+    user:'root',          //用户名
+    password:'12345678',	//密码
+    host:'localhost',		//主机（默认都是local host）
+    database:'test' 
   })
 }
 function query(sql, data) {
@@ -22,7 +21,7 @@ function query(sql, data) {
           return
         } else {
           resovle(results)
-          debug && console.log('数据库操作成功:' + JSON.stringify(results))
+          // debug && console.log('数据库操作成功:' + JSON.stringify(results))
         }
       })
     } catch (e) {

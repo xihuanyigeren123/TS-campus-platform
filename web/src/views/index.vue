@@ -1,14 +1,18 @@
 <template>
   <div class="index">
-    <!-- Start of Header -->
     <div class="header-wrapper">
       <header>
         <div class="container">
           <div class="logo-container">
             <!-- Website Logo -->
-            <span style="font-size: 35px;color: white;"></span>
+            <!-- <span style="font-size: 35px;color: white;"></span> -->
+             <el-image
+      style="width: 100px; height: 100px"
+      src="../assets/images/video.png"
+    ></el-image>
+         
             <span class="tag-line" style="font-size: 20px"
-              >校园信息交流平台</span
+              >唐师人</span
             >
           </div>
           <!-- Start of Main Navigation -->
@@ -73,7 +77,7 @@
                     />
                     <el-badge v-else :value="unread" class="item">
                       <img
-                        style="     height: 20px; "
+                        style="height: 20px; "
                         :src="avatar"
                         class="avatar touxiang avatar-60 photo"
                         height="20"
@@ -150,7 +154,7 @@
           Information sharing and communication platform of PANZHIHUA University
           , Makes information transfer easier
         </p>
-
+<!-- 
         <form class="search-form clearfix" @submit.prevent="onSubmit">
           <input
             class="search-term required"
@@ -165,7 +169,7 @@
             value="搜索"
           />
           <div id="search-error-container"></div>
-        </form>
+        </form> -->
       </div>
     </div>
     <!-- End of Search Wrapper -->
@@ -173,8 +177,8 @@
     <!-- start of foot -->
     <foot />
     <!-- end of foot -->
-    <!-- 弹窗组件 -->
 
+    <!-- 弹窗组件 -->
     <div class="login" v-if="isclose">
       <div id="mask"></div>
       <div id="loginBox">
@@ -411,6 +415,9 @@ export default {
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.search-area-wrapper{
+  /* background-image: url(""); */
+}
 .header-btn {
   background-color: #2c696d;
   font-size: 14px;

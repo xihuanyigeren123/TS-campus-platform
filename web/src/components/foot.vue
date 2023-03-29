@@ -9,7 +9,7 @@
               <h3 class="title">网站主要功能</h3>
               <div class="textwidget">
                 <p>
-                  “buyi”是攀枝花学院信息发布与交流平台，用户通过注册账号后就可以发布信息和评论，你可以在这里进行求助和帮助他人
+                  “唐师人”是唐山师范学院信息发布与交流平台，用户通过注册账号后就可以发布信息和评论，你可以在这里进行求助和帮助他人
                 </p>
               </div>
               <h3 class="title">公告</h3>
@@ -28,18 +28,20 @@
               <ul>
                 <li>
                   <a
-                    href="http://www.hsu.edu.cn/"
+                    href="http://www.tstc.edu.cn/"
                     title="Lorem ipsum dolor sit amet,"
+                    target="_blank"
                   >
-                    官网</a
+                    学校官网</a
                   >
                 </li>
                 <li>
                   <a
-                    href="http://jwc.hsu.edu.cn/"
+                    href="http://jwc.tstc.edu.cn/"
                     title="Lorem ipsum dolor sit amet,"
+                     target="_blank"
                   >
-                    教务教务系统</a
+                    教务系统</a
                   >
                 </li>
               </ul>
@@ -89,8 +91,8 @@
           <div class="row">
             <div class="span6">
               <p class="copyright">
-                Copyright © 2019 - -
-                <a
+                Copyright © 2023 
+                <!-- <a
                   style="color: #858585;"
                   href="http://www.miit.gov.cn/"
                   target="“_blank”"
@@ -102,7 +104,7 @@
                   href="http://www.guoang.xyz/"
                   target="“_blank”"
                   >www.guoang.xyz</a
-                >
+                > -->
               </p>
             </div>
           </div>

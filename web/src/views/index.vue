@@ -1,182 +1,192 @@
 <template>
   <div class="index">
-    <div class="header-wrapper">
-      <header>
-        <div class="container">
-          <div class="logo-container">
-            <!-- Website Logo -->
-            <!-- <span style="font-size: 35px;color: white;"></span> -->
-             <el-image
-      style="width: 100px; height: 100px"
-      src="../assets/images/video.png"
-    ></el-image>
-         
-            <span class="tag-line" style="font-size: 20px"
-              >唐师人</span
-            >
-          </div>
-          <!-- Start of Main Navigation -->
-          <nav class="main-nav">
-            <div class="menu-top-menu-container">
-              <ul id="menu-top-menu" class="clearfix">
-                <router-link
-                  to="/"
-                  tag="li"
-                  exact-active-class="current-menu-item"
-                >
-                  <a>首页</a>
+    <el-container>
+      <el-header>
+        <div class="header-wrapper" style="background-color:white;">
+          <div class="logo-container" style="padding:15px;">
+            <el-row>
+              <el-col :span="4">
+                <router-link to="/">
+                  <img
+                    style="width: 45px; height: 45px"
+                    src="../assets/images/apple-icon-180x180.png"
+                  />
+                  <span class="tag-line" style="font-size: 20px">唐师人</span>
                 </router-link>
-                <router-link
-                  to="/help"
-                  tag="li"
-                  exact-active-class="current-menu-item"
-                >
-                  <a>问答</a>
-                </router-link>
-                <router-link
-                  to="/activity"
-                  tag="li"
-                  exact-active-class="current-menu-item"
-                >
-                  <a>活动</a>
-                </router-link>
-                <router-link
-                  to="/job"
-                  tag="li"
-                  exact-active-class="current-menu-item"
-                >
-                  <a>招聘信息</a>
-                </router-link>
-                <router-link
-                  to="/oldstuff"
-                  tag="li"
-                  exact-active-class="current-menu-item"
-                >
-                  <a>二手信息</a>
-                </router-link>
-                <router-link
-                  to="/news"
-                  tag="li"
-                  exact-active-class="current-menu-item"
-                >
-                  <a>文章/新闻</a>
-                </router-link>
-
-                <li v-if="avatar == ''">
-                  <a @click="closein">登录/注册</a>
-                </li>
-                <el-dropdown v-else>
-                  <a style="color: #c1cad1;">
-                    <img
-                      v-if="unread == 0"
-                      style="     height: 20px; "
-                      :src="avatar"
-                      class="avatar touxiang avatar-60 photo"
-                      height="20"
-                      width="20"
-                    />
-                    <el-badge v-else :value="unread" class="item">
+              </el-col>
+              <el-col :span="6">
+                <div class="grid-content bg-purple">北京----天气</div>
+              </el-col>
+              <el-col :span="6">
+                <div class="grid-content bg-purple">
+                  <span v-if="avatar == ''">
+                    <a @click="closein">登录/注册</a>
+                  </span>
+                  <el-dropdown v-else>
+                    <a style="color: #c1cad1;">
                       <img
-                        style="height: 20px; "
+                        v-if="unread == 0"
+                        style="     height: 20px; "
                         :src="avatar"
                         class="avatar touxiang avatar-60 photo"
                         height="20"
                         width="20"
                       />
-                    </el-badge>
-                    {{ nickname }}
-                  </a>
-                  <el-dropdown-menu slot="dropdown">
-                    <el-dropdown-item>
-                      <router-link
-                        to="/admin"
-                        tag="a"
-                        exact-active-class="current-menu-item"
-                        >个人中心</router-link
-                      >
-                    </el-dropdown-item>
+                      <el-badge v-else :value="unread" class="item">
+                        <img
+                          style="height: 20px; "
+                          :src="avatar"
+                          class="avatar touxiang avatar-60 photo"
+                          height="20"
+                          width="20"
+                        />
+                      </el-badge>
+                      {{ nickname }}
+                    </a>
+                    <el-dropdown-menu slot="dropdown">
+                      <el-dropdown-item>
+                        <router-link to="/admin" tag="a" exact-active-class="current-menu-item">个人中心</router-link>
+                      </el-dropdown-item>
 
-                    <el-dropdown-item>
-                      <router-link
-                        to="/admin/notice"
-                        tag="li"
-                        exact-active-class="current-menu-item"
-                      >
-                        <a v-if="unread == 0">消息中心</a>
-                        <el-badge v-else :value="unread" class="item">
-                          <a>消息中心</a>
-                        </el-badge>
-                      </router-link>
-                    </el-dropdown-item>
-                    <el-dropdown-item>
-                      <a @click="logout">退出登录</a>
-                    </el-dropdown-item>
-                  </el-dropdown-menu>
-                </el-dropdown>
-                <!-- <router-link to="/admin/notice" tag="li" exact-active-class="current-menu-item">
-                  <el-button v-if="unread==0" size="mini" type="info" icon="el-icon-bell" circle></el-button>
-                  <el-badge v-else :value="unread" class="item">
-                    <img
-                      style="     height: 20px; "
-                      :src="avatar"
-                      class="avatar touxiang avatar-60 photo"
-                      height="20"
-                      width="20"
-                    />
-                  </el-badge>
-                </router-link>-->
-              </ul>
-            </div>
-            <select
-              v-model="selected"
-              @change="changeHref(parseInt(selected))"
-              class="responsive-nav"
-            >
-              <option value="1">首页</option>
-              <option value="2">问答</option>
-              <option value="3">活动</option>
-              <option value="4">招聘信息</option>
-              <option value="5">二手信息</option>
-              <option value="6">登录/注册</option>
-            </select>
-          </nav>
-          <!-- End of Main Navigation -->
+                      <el-dropdown-item>
+                        <router-link
+                          to="/admin/notice"
+                          tag="li"
+                          exact-active-class="current-menu-item"
+                        >
+                          <a v-if="unread == 0">消息中心</a>
+                          <el-badge v-else :value="unread" class="item">
+                            <a>消息中心</a>
+                          </el-badge>
+                        </router-link>
+                      </el-dropdown-item>
+                      <el-dropdown-item>
+                        <a @click="logout">退出登录</a>
+                      </el-dropdown-item>
+                    </el-dropdown-menu>
+                  </el-dropdown>
+                </div>
+              </el-col>
+            </el-row>
+          </div>
         </div>
-      </header>
-    </div>
-    <!-- End of Header -->
-    <!-- Start of Search Wrapper -->
-    <div class="search-area-wrapper">
-      <div class="search-area container">
-        <h3 class="search-header">Campus Service</h3>
-        <!-- <button class="header-btn">发布信息</button> -->
-        <p class="search-tag-line" style="margin-top:50px">
-          Information sharing and communication platform of PANZHIHUA University
-          , Makes information transfer easier
-        </p>
-<!-- 
-        <form class="search-form clearfix" @submit.prevent="onSubmit">
-          <input
-            class="search-term required"
-            type="text"
-            v-model="search"
-            placeholder="Type your search terms here"
-          />
-          <input
-            class="search-btn"
-            type="submit"
-            @click="searchbtn"
-            value="搜索"
-          />
-          <div id="search-error-container"></div>
-        </form> -->
-      </div>
-    </div>
-    <!-- End of Search Wrapper -->
-    <router-view />
-    <!-- start of foot -->
-    <foot />
-    <!-- end of foot -->
+      </el-header>
+
+      <el-aside style=" width: 200px;">
+        <div class="nav">
+          <el-menu default-active="2" class="el-menu-vertical-demo" router>
+            <el-submenu index="1">
+              <template slot="title">
+                <i class="el-icon-position"></i>
+                <span>首页</span>
+              </template>
+              <el-menu-item-group>
+                <!-- <template slot="title">分组一</template> -->
+                <el-menu-item index="/">....</el-menu-item>
+                <el-menu-item index="1-2">...</el-menu-item>
+              </el-menu-item-group>
+            </el-submenu>
+
+            <el-submenu index="2">
+              <template slot="title">
+                <i class="el-icon-chat-dot-square"></i>
+                <span>校园论坛</span>
+              </template>
+              <el-menu-item-group>
+                <!-- <template slot="title">分组一</template> -->
+                <el-menu-item index="/help">全部</el-menu-item>
+                <el-menu-item index="1-2">...</el-menu-item>
+              </el-menu-item-group>
+            </el-submenu>
+
+            <el-submenu index="3">
+              <template slot="title">
+                <i class="el-icon-basketball"></i>
+                <span>校园活动</span>
+              </template>
+              <el-menu-item-group>
+                <!-- <template slot="title">分组一</template> -->
+                <el-menu-item index="/activity">全部</el-menu-item>
+                <el-menu-item index="1-2">...</el-menu-item>
+              </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="4">
+              <template slot="title">
+                <i class="el-icon-monitor"></i>
+                <span>新闻资讯</span>
+              </template>
+              <el-menu-item-group>
+                <!-- <template slot="title">分组一</template> -->
+                <el-menu-item index="/news">全部</el-menu-item>
+                <el-menu-item index="1-2">...</el-menu-item>
+              </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="5">
+              <template slot="title">
+                <i class="el-icon-shopping-cart-1"></i>
+                <span>咸鱼市场</span>
+              </template>
+              <el-menu-item-group>
+                <!-- <template slot="title">分组一</template> -->
+                <el-menu-item index="/oldstuff">全部</el-menu-item>
+                <el-menu-item index="1-2">...</el-menu-item>
+              </el-menu-item-group>
+            </el-submenu>
+
+            <el-submenu index="6">
+              <template slot="title">
+                <i class="el-icon-cherry"></i>
+                <span>校园招聘</span>
+              </template>
+              <el-menu-item-group>
+                <!-- <template slot="title">分组一</template> -->
+                <el-menu-item index="/oldstuff">全部</el-menu-item>
+                <el-menu-item index="1-2">...</el-menu-item>
+              </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="7">
+              <template slot="title">
+                <i class="el-icon-message"></i>
+                <span>校园简介</span>
+              </template>
+              <el-menu-item-group>
+                <!-- <template slot="title">分组一</template> -->
+                <el-menu-item index="/job">全部</el-menu-item>
+                <el-menu-item index="1-2">...</el-menu-item>
+              </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="8">
+              <template slot="title">
+                <i class="el-icon-connection"></i>
+                <span>footer</span>
+              </template>
+              <el-menu-item-group>
+                <!-- <template slot="title">分组一</template> -->
+                <el-menu-item index="/job">全部</el-menu-item>
+                <el-menu-item index="1-2">...</el-menu-item>
+              </el-menu-item-group>
+            </el-submenu>
+          </el-menu>
+        </div>
+      </el-aside>
+      <el-container>
+        <el-main>
+          <div class="content">
+            <el-row>
+              <!-- <el-col :span="3"></el-col> -->
+              <el-col :span="4" :offset="4">
+                <div class="grid-content bg-purple">
+                  <router-view />
+                </div>
+              </el-col>
+            </el-row>
+          </div>
+        </el-main>
+        <el-footer>
+          <foot />
+        </el-footer>
+      </el-container>
+    </el-container>
 
     <!-- 弹窗组件 -->
     <div class="login" v-if="isclose">
@@ -189,36 +199,19 @@
         </div>
         <div class="pass">
           密 码：
-          <input
-            type="password"
-            v-model="password"
-            name="password"
-            class="text"
-          />
+          <input type="password" v-model="password" name="password" class="text" />
         </div>
         <div class="pass" v-if="!islogin">
           确 认：
-          <input
-            type="password"
-            v-model="password1"
-            name="password"
-            class="text"
-          />
+          <input type="password" v-model="password1" name="password" class="text" />
         </div>
         <div class="button" v-if="islogin">
           <input type="button" @click="login" value="登录" class="submit" />
         </div>
         <div class="button" v-else>
-          <input
-            type="button"
-            value="注册"
-            @click="registered"
-            class="submit"
-          />
+          <input type="button" value="注册" @click="registered" class="submit" />
         </div>
-        <div class="other" @click="join">
-          {{ islogin ? '注册新用户' : '快去登录' }}
-        </div>
+        <div class="other" @click="join">{{ islogin ? '注册新用户' : '快去登录' }}</div>
         <a class="iconfont" @click="close">&#xe608;</a>
       </div>
     </div>
@@ -410,12 +403,44 @@ export default {
   },
   created() {
     localStorage.luffy_jwt_token && this.getnocitenmu()
+  },
+  mounted() {
+    console.log(this.$store, '22')
   }
 }
 </script>
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.search-area-wrapper{
+.index {
+  background-color: #edeff4;
+}
+.el-header {
+  position: fixed;
+  width: 100vw;
+  z-index: 999;
+}
+.el-aside {
+  background-color: #fff;
+  /* color: #333; */
+  /* text-align: center; */
+
+  line-height: 200px;
+  height: 100vh;
+  position: fixed;
+}
+.el-main {
+  padding: 0;
+}
+.index .nav {
+  margin-top: 80px;
+  width: 200px;
+}
+.container {
+  margin: 0;
+}
+.logo-container {
+  padding: 0;
+}
+.search-area-wrapper {
   /* background-image: url(""); */
 }
 .header-btn {

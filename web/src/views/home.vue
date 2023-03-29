@@ -1,32 +1,27 @@
 <template>
   <div class="home">
-    <div v-title data-title="学院信息交流平台 | 首页"></div>
+    <div v-title data-title="唐师人|首页"></div>
 
     <!-- Start of Page Container -->
     <div class="page-container">
       <div class="container">
         <div class="row">
-          <!-- start of page content -->
           <div class="span8 page-content">
-            <!-- Basic Home Page Template -->
             <help />
             <oldstuff />
             <news />
           </div>
-          <!-- end of page content -->
-          <!-- start of sidebar -->
-          <aside class="span4 page-sidebar">
+      
+          <!-- <aside class="span4 page-sidebar">
             <section class="widget">
               <carousel />
               <activity />
               <job />
             </section>
-          </aside>
-          <!-- end of sidebar -->
+          </aside> -->
         </div>
       </div>
     </div>
-    <!-- End of Page Container -->
   </div>
 </template>
 <script>
@@ -44,15 +39,15 @@ export default {
   components: {
     news,
     oldstuff,
-    job,
-    activity,
-    carousel,
+    // job,
+    // activity,
+    // carousel,
     help
   }
 }
 </script>
 <style>
 .guomore {
-  float: right;
+  /* float: right; */
 }
 </style>

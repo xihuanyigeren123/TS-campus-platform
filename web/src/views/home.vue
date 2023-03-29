@@ -43,8 +43,12 @@ export default {
 }
 </script>
 <style scoped>
+.home{
+  padding:15px ;
+    background-color: #fff;
+}
 .content {
-  background-color: #fff;
+
   padding: 0;
   margin-top:120px;
   /* width: 600px; */

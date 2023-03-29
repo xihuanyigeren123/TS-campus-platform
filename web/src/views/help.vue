@@ -1,5 +1,5 @@
 <template>
-  <div class="help">
+  <div class="helper">
     <div v-title data-title="  学生信息交流平台| 问答"></div>
 
     <!-- Start of Page Container -->
@@ -9,10 +9,11 @@
           <!-- start of page content -->
           <div class="span8 page-content">
             <div>
-              <h1>
-                问答区
-                <small>{{ smallttle }}</small>
-              </h1>
+              <h3>
+                <i class="el-icon-chat-dot-round"></i>
+                校园论坛
+            
+              </h3>
             </div>
             <!-- Basic Home Page Template -->
             <ul class="tabs-nav">
@@ -71,18 +72,17 @@
               :total="pagelistquery.total"
             ></el-pagination>
           </div>
-          <!-- end of page content -->
-          <!-- start of sidebar -->
+        
           <aside class="span4 page-sidebar">
             <carousel />
             <oldstuffhot />
           </aside>
 
-          <!-- end of sidebar -->
+       
         </div>
       </div>
     </div>
-    <!-- End of Page Container -->
+
   </div>
 </template>
 
@@ -159,8 +159,9 @@ export default {
   }
 }
 </script>
-<style>
-.help {
+<style scopod>
+.helper {
   min-height: 200px;
+  padding: 10px;
 }
 </style>

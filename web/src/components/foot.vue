@@ -12,13 +12,7 @@
                   “唐师人”是唐山师范学院信息发布与交流平台，用户通过注册账号后就可以发布信息和评论，你可以在这里进行求助和帮助他人
                 </p>
               </div>
-              <h3 class="title">公告</h3>
-              <div class="textwidget">
-                <p>
-                  禁止在本平台上发表不当言论
-                  禁止出现辱骂他人的语言，一经发现进行封号处理
-                </p>
-              </div>
+           
             </section>
           </div>
 
@@ -50,11 +44,12 @@
 
           <div class="span3">
             <section class="widget">
-              <h3 class="title">广告信息</h3>
-              <div id="twitter_update_list">
-                <ul>
-                  <li>No</li>
-                </ul>
+              <h3 class="title">公告</h3>
+                <div class="textwidget">
+                <p>
+                  禁止在本平台上发表不当言论
+                  禁止出现辱骂他人的语言，一经发现进行封号处理
+                </p>
               </div>
             </section>
           </div>

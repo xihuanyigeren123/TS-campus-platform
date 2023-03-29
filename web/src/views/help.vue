@@ -73,7 +73,7 @@
             ></el-pagination>
           </div>
         
-          <aside class="span4 page-sidebar">
+          <aside class="span4 page-sidebar aside">
             <carousel />
             <oldstuffhot />
           </aside>
@@ -159,9 +159,16 @@ export default {
   }
 }
 </script>
-<style scopod>
+<style scoped>
 .helper {
   min-height: 200px;
-  padding: 10px;
+ 
+}
+.row{
+ padding: 10px;
+ display: flex;
+}
+.aside{
+  margin-left: 100px;
 }
 </style>

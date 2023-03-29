@@ -1,6 +1,6 @@
 <template>
   <div id="newscontent">
-    <div v-title data-title="问答详情"></div>
+    <div v-title data-title="新闻资讯"></div>
 
     <!-- Start of Page Container -->
     <div class="page-container">
@@ -9,21 +9,90 @@
           <!-- start of page content -->
           <div class="span8 page-content">
             <article class="type-post format-standard hentry clearfix">
-              <h1 class="post-title">
-                <a>{{ content.article_title }}</a>
-              </h1>
+              <h2 class="post--title">
+                <i class="el-icon-coin"></i>
+                {{ content.article_title }}
+              </h2>
 
               <div class="post-meta clearfix">
-                <span class="date">{{
+                <div class="post-header">
+                  <span class="categorys">
+                    <i class="el-icon-user-solid"></i>
+                   
+                    <el-popover placement="right" width="400" trigger="hover">
+                      <span>
+                        <li class="comment even thread-odd thread-alt depth-1" id="li-comment-4">
+                          <article id="comment-4">
+                            <img
+                              :src="content.avatar"
+                              class="avatar touxiang avatar-60 photo"
+                              height="60"
+                              width="60"
+                            />
+
+                            <div class="comment-meta">
+                              <h5 class="author">{{ content.nickname }}</h5>
+
+                              <p class="date" v-if="content.realstate == 3">认证用户</p>
+                              <p class="date" v-else>未认证用户</p>
+                            </div>
+                          </article>
+                        </li>
+                        <div class="xinxi">
+                          <p style="  color: #000;">账号：</p>
+                          <p>{{ content.username }}</p>
+                        </div>
+                        <div class="xinxi">
+                          <p style="  color: #000;">邮箱：</p>
+                          <p>{{ content.mail }}</p>
+                        </div>
+                        <div class="xinxi">
+                          <p style="  color: #000;">QQ：</p>
+                          <p>{{ content.qq }}</p>
+                        </div>
+                        <div class="xinxi">
+                          <p style="  color: #000;">个人简介：</p>
+                          <p>{{ content.synopsis }}</p>
+                        </div>
+                        <el-button
+                          @click="jubao(content.username)"
+                          style="margin:10px 150px"
+                          type="danger"
+                          plain
+                        >举报</el-button>
+                      </span>
+                      <a
+                        href="#"
+                        slot="reference"
+                        title="View all posts in Server &amp; Database"
+                      >{{ content.nickname }}</a>
+                    </el-popover>
+                  </span> |
+                  <span class="dates">
+                    <i class="el-icon-date"></i>
+                    {{
+                    content.article_createtime | dataFormat
+                    }}
+                  </span>
+ |
+                  <span class="comments">
+                    <i class="el-icon-chat-dot-round"></i>
+                    {{ commentnum }}
+                  </span>
+                  <span class="like-count">
+                    <i class="el-icon-view"></i>
+                    {{ content.article_read_num }}
+                  </span>
+                </div>
+                <!-- <span class="date">
+                  {{
                   content.article_createtime | dataFormat
-                }}</span>
-                <span class="category">
+                  }}
+                </span> -->
+                <!-- <span class="category">
                   <el-popover placement="right" width="400" trigger="hover">
                     <span>
-                      <li
-                        class="comment even thread-odd thread-alt depth-1"
-                        id="li-comment-4"
-                      >
+                      <li class="comment even thread-odd thread-alt depth-1" id="li-comment-4">
                         <article id="comment-4">
                           <img
                             :src="content.avatar"
@@ -35,9 +104,7 @@
                           <div class="comment-meta">
                             <h5 class="author">{{ content.nickname }}</h5>
 
-                            <p class="date" v-if="content.realstate == 3">
-                              认证用户
-                            </p>
+                            <p class="date" v-if="content.realstate == 3">认证用户</p>
                             <p class="date" v-else>未认证用户</p>
                           </div>
                         </article>
@@ -63,33 +130,25 @@
                         style="margin:10px 150px"
                         type="danger"
                         plain
-                        >举报</el-button
-                      >
+                      >举报</el-button>
                     </span>
                     <a
                       href="#"
                       slot="reference"
                       title="View all posts in Server &amp; Database"
-                      >{{ content.nickname }}</a
-                    >
+                    >{{ content.nickname }}</a>
                   </el-popover>
-                </span>
-                <span class="comments">
-                  <a
-                    href="#"
-                    title="Comment on Integrating WordPress with Your Website"
-                    >{{ commentnum }} Comments</a
-                  >
-                </span>
-                <span class="like-count">66</span>
+                </span> -->
+
+                <span class="like-count"></span>
               </div>
-              <!-- end of post meta -->
+
               <blockquote v-html="content.article_content"></blockquote>
             </article>
 
             <div class="like-btn">
               <form id="like-it-form" action="#" method="post">
-                <span class="like-it">66</span>
+                <span class="like-it"></span>
                 <input type="hidden" name="post_id" value="99" />
                 <input type="hidden" name="action" value="like_it" />
               </form>
@@ -101,25 +160,19 @@
                   @click="$router.push(`/help/${tag}`)"
                   :key="id"
                   class="label"
-                  >{{ tag }}</span
-                >
+                >{{ tag }}</span>
               </span>
             </div>
 
             <comment />
-            <!-- end of comments -->
-            <!-- end of page content -->
           </div>
           <aside class="span4 page-sidebar">
             <carousel />
             <news />
           </aside>
-
-          <!-- end of sidebar -->
         </div>
       </div>
     </div>
-    <!-- End of Page Container -->
   </div>
 </template>
 
@@ -193,7 +246,14 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
+.post-header{
+display: flex;
+margin: 5px;
+}
+.post-header span{
+padding: 0 5px;
+}
 .help {
   min-height: 200px;
 }

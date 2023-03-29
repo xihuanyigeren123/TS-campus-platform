@@ -1,7 +1,7 @@
 <template>
   <div class="comment">
     <section id="comments">
-      <h3 id="comments-title">({{ commentnum }}) 留言</h3>
+      <h3 id="comments-title">评论</h3>
 
       <article id="comment-4" v-if="userinfo">
         <img
@@ -12,7 +12,7 @@
         <h4 class="author" style=" display: inline;">{{ nickname }}</h4>
       </article>
       <div v-if="editorid !== -1" @click="usercomment" class="commenttop">
-        添加评论
+        发布评论
       </div>
       <vue-editor
         v-if="editorid === -1"
@@ -112,12 +112,12 @@
 
             <div class="comment-body" v-html="item.comment_content"></div>
             <div class="comment-footer">
-              <p @click="getreplybutton(item.comment_id, id)">查看所有回复</p>
+              <p @click="getreplybutton(item.comment_id, id)">查看所有回复 <i class="el-icon-arrow-down"></i></p>
               <p
                 @click="
                   showinput(id, item.nickname, item.user_id, item.comment_id)
                 "
-              >
+              ><i class="el-icon-chat-line-round"></i>
                 回复
               </p>
             </div>
@@ -131,9 +131,7 @@
                 <el-button type="info" @click="setcomment">评论</el-button>
               </div>
             </div>
-            <!-- end of comment-body -->
           </article>
-          <!-- end of comment -->
 
           <ul class="children" v-if="id === replyid">
             <li
@@ -258,7 +256,6 @@
                   </div>
                 </div>
               </article>
-              <!-- end of comment -->
             </li>
           </ul>
         </li>
@@ -450,7 +447,8 @@ export default {
 .commenttop {
   margin-top: 20px;
   font-size: 20px;
-  width: 100%;
+  /* width: 55px;
+  width: 100%; */
   text-align: center;
   padding: 10px;
   background-color: rgb(250, 244, 244);

@@ -8,8 +8,8 @@
         class="page-header"
         style="position:relative;cursor:pointer"
       >
-        <h3>新闻/文章</h3>
-        <h4 style="  position: absolute;right: 100px;top: 4px;">更多></h4>
+        <h3>新闻资讯</h3>
+        <h4 style="  position: absolute;right: 100px;top: 4px;">更多 <i class="el-icon-mouse"></i></h4>
       </router-link>
       <article
         class="format-standard type-post hentry clearfix"
@@ -50,7 +50,7 @@
           <router-link
             :to="'/newscontent/' + item.article_id"
             class="readmore-link"
-            >...查看更多</router-link
+            > <i class="el-icon-more"></i></router-link
           >
         </p>
       </article>

@@ -169,12 +169,11 @@
           </el-menu>
         </div>
       </el-aside>
-      <el-container>
         <el-main>
           <div class="content">
             <el-row>
               <!-- <el-col :span="3"></el-col> -->
-              <el-col :span="4" :offset="4">
+              <el-col :span="10" :offset="6">
                 <div class="grid-content bg-purple">
                   <router-view />
                 </div>
@@ -185,7 +184,7 @@
         <el-footer>
           <foot />
         </el-footer>
-      </el-container>
+   
     </el-container>
 
     <!-- 弹窗组件 -->
@@ -426,6 +425,7 @@ export default {
   line-height: 200px;
   height: 100vh;
   position: fixed;
+  z-index: 1;
 }
 .el-main {
   padding: 0;

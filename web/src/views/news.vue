@@ -1,20 +1,17 @@
 <template>
-  <div class="help">
-    <div v-title data-title=" 学生信息交流平台 | 问答"></div>
-
-    <!-- Start of Page Container -->
+  <div class="news">
+    <div v-title data-title=" 唐师人 | 资讯"></div>
     <div class="page-container">
       <div class="container">
-        <div class="row">
-          <!-- start of page content -->
-          <div class="span8 page-content">
+        <div class="" style="display:flex;">
+          <div class="page-content">
             <div class="page-header">
-              <h3>
-                文章/新闻
-                <small>{{ smallttle }}</small>
-              </h3>
+              <span style="font-size:20px; font-weight: 500;">
+                <i class="el-icon-monitor"></i>    <strong>新闻资讯</strong>
+              </span>
+
+              <!-- <small>{{ smallttle }}</small> -->
             </div>
-            <!-- Basic Home Page Template -->
             <ul class="tabs-nav">
               <li
                 :class="
@@ -34,80 +31,69 @@
               >
                 <a>{{ lable }}</a>
               </li>
-              <li
-                v-if="pagelistquery.tag != ''"
-                class="active"
-                @click="changelable('')"
-              >
+              <li v-if="pagelistquery.tag != ''" class="active" @click="changelable('')">
                 <a>{{ this.pagelistquery.tag }}</a>
               </li>
             </ul>
-
+            <div  v-loading="loading">
             <article
-              class="format-standard type-post hentry clearfix"
+              class="format-standard type-post hentry clearfix article"
               v-for="(item, id) in tableData"
               :key="id"
+             
             >
-              <header class="clearfix">
-                <h3 class="post-title">
-                  <router-link :to="'/newscontent/' + item.article_id">{{
-                    item.article_title
-                  }}</router-link>
-                </h3>
-
-                <div class="post-meta clearfix">
-                  <span class="date">{{
+              <header class="header">
+                <div class="post-header">
+                  <span class="categorys">
+                    <i class="el-icon-user-solid"></i>
+                    {{ item.nickname }}
+                  </span> |
+                  <span class="dates">
+                    <i class="el-icon-date"></i>
+                    {{
                     item.article_createtime | dataFormat
-                  }}</span>
-                  <span class="category">
-                    <a
-                      href="#"
-                      title="View all posts in Server &amp; Database"
-                      >{{ item.nickname }}</a
-                    >
-                  </span>
+                    }}
+                  </span> |
                   <span class="comments">
-                    <a
-                      href="#"
-                      title="Comment on Integrating WordPress with Your Website"
-                      >3 Comments</a
-                    >
+                    <a href="#" title="Comment on Integrating WordPress with Your Website">资讯</a>
                   </span>
                   <span class="like-count">
-                    <a class="iconfont">&#xe61c;</a>{{ item.article_read_num }}
+                    <i class="el-icon-view"></i>
+                    {{ item.article_read_num }}
                   </span>
                 </div>
-                <!-- end of post meta -->
               </header>
-
-              <p>
-                {{ item.article_introduction }}
-                <router-link
-                  :to="'/newscontent/' + item.article_id"
-                  class="readmore-link"
-                  >...查看更多</router-link
-                >
-              </p>
+              <div class="content">
+                <h4 class="post_titles" style="margin:0;">
+                  <router-link :to="'/newscontent/' + item.article_id">
+                    {{
+                    item.article_title
+                    }}
+                  </router-link>
+                </h4>
+                <p style="margin:10px 0;">
+                  <router-link
+                    :to="'/newscontent/' + item.article_id"
+                    class="readmore-link"
+                  >{{ item.article_introduction }}...</router-link>
+                </p>
+              </div>
             </article>
-
+</div>
             <el-pagination
               @current-change="handleCurrentChange"
               layout="prev, pager, next"
               :total="pagelistquery.total"
             ></el-pagination>
           </div>
-          <!-- end of page content -->
-          <!-- start of sidebar -->
-          <aside class="span4 page-sidebar">
+          <aside class=" page-sidebar">
             <carousel />
             <oldstuffhot />
           </aside>
 
-          <!-- end of sidebar -->
         </div>
       </div>
     </div>
-    <!-- End of Page Container -->
   </div>
 </template>
 
@@ -116,7 +102,7 @@ import carousel from '@/components/carousel.vue'
 import oldstuffhot from '@/components/oldstuffhot.vue'
 
 export default {
-  name: 'help',
+  name: 'news',
   components: {
     carousel,
     oldstuffhot
@@ -132,7 +118,8 @@ export default {
         pagesize: 5,
         page: 1
       },
-      tableData: {}
+      tableData: {},
+      loading:false,
     }
   },
   props: {
@@ -154,6 +141,7 @@ export default {
       this.getarticlelist()
     },
     async getarticlelist() {
+      this.loading = true
       let res = await this.$axios.post(
         '/web/getarticlelist',
         this.qs.stringify(this.pagelistquery)
@@ -163,6 +151,7 @@ export default {
         console.log(res.data)
         this.pagelistquery.total = res.data.count
       }
+          this.loading = false
     },
     async lablelist() {
       let res = await this.$axios.post(
@@ -172,6 +161,7 @@ export default {
       if (res.data.state.type === 'SUCCESS') {
         // this.lable = res.data.data
         this.lables = JSON.parse(res.data.data[0].lable)
+        console.log(this.lables, ' this.lables ')
       }
     }
   },
@@ -182,8 +172,44 @@ export default {
   }
 }
 </script>
-<style>
-.help {
+<style scoped>
+.tabs-nav{
+  display: flex;
+  cursor:pointer;
+  margin-bottom:5px;
+  background-color: #edeff4;
+  border-radius: 20px;
+  width: 770px;
+}
+
+.tabs-nav li {
+  /* padding: 5px 10px; */
+  border-radius: 20px;
+}
+
+.page-container{
+  background-color: red;
+}
+.news {
   min-height: 200px;
+  margin-top: 80px;
+}
+.header {
+  border-top: 1px solid #edeff4;
+}
+.post-header {
+  padding: 10px 0;
+}
+.post-header span {
+  padding: 0 8px;
+}
+.content{
+  padding:0 8px;
+}
+.article:hover{
+  background-color: #eceff0;
+}
+.page-content{
+  min-width: 770px;
 }
 </style>

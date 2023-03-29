@@ -1,17 +1,14 @@
 <template>
   <div class="home">
     <div v-title data-title="唐师人|首页"></div>
-
-    <!-- Start of Page Container -->
-    <div class="page-container">
-      <div class="container">
-        <div class="row">
-          <div class="span8 page-content">
+      
+        <div class="content">
+          <div class="page-content">
+            <news />
             <help />
             <oldstuff />
-            <news />
+            
           </div>
-      
           <!-- <aside class="span4 page-sidebar">
             <section class="widget">
               <carousel />
@@ -20,8 +17,7 @@
             </section>
           </aside> -->
         </div>
-      </div>
-    </div>
+      
   </div>
 </template>
 <script>
@@ -46,8 +42,11 @@ export default {
   }
 }
 </script>
-<style>
-.guomore {
-  /* float: right; */
+<style scoped>
+.content {
+  background-color: #fff;
+  padding: 0;
+  margin-top:120px;
+  /* width: 600px; */
 }
 </style>

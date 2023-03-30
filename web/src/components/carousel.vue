@@ -8,9 +8,7 @@
         <el-carousel-item v-for="(carousel, id) in carousel" :key="id">
           <div style="height:250px;position:relative">
             <a :href="carousel.carousel_url" target="_blank">
-              <div class="carouseltitle">
-                {{ carousel.carousel_title }}
-              </div>
+              <div class="carouseltitle">{{ carousel.carousel_title }}</div>
               <img :src="carousel.carousel_img" alt class="carouselimg" />
             </a>
           </div>
@@ -52,6 +50,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.hello {
+  padding: 5px;
+  box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+}
 .carouselimg {
   width: 100%;
   height: 100%;

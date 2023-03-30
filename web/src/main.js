@@ -68,7 +68,6 @@ import axios from 'axios'
 //aciox基础url
 axios.defaults.baseURL = 'http://127.0.0.1:3000'
 
-//将axios写成vue的原型属性
 Vue.prototype.$axios = axios
     //为post请求设置默认请求头
 axios.defaults.headers.post['Content-Type'] =
@@ -99,7 +98,7 @@ axios.interceptors.response.use(
                 //未登录
                 ElementUI.Notification({
                     title: '警告',
-                    message: '登录过期请重新登录',
+                    message: '登录过期,请重新登录',
                     type: 'warning'
                 })
                 store.dispatch('user/close') //登录弹窗

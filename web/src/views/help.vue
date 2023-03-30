@@ -2,87 +2,78 @@
   <div class="helper">
     <div v-title data-title="  学生信息交流平台| 问答"></div>
 
-    <!-- Start of Page Container -->
     <div class="page-container">
-      <div class="container">
-        <div class="row">
-          <!-- start of page content -->
-          <div class="span8 page-content">
-            <div>
-              <h3>
-                <i class="el-icon-chat-dot-round"></i>
-                校园论坛
-            
-              </h3>
-            </div>
-            <!-- Basic Home Page Template -->
-            <ul class="tabs-nav">
-              <li
-                :class="
+      <div class="contents">
+        <!-- start of page content -->
+        <div class="page-contents">
+          <div>
+            <h3>
+              <i class="el-icon-chat-dot-round"></i>
+              校园论坛
+            </h3>
+          </div>
+          <!-- Basic Home Page Template -->
+          <ul class="tabs-nav">
+            <li
+              :class="
                   pagelistquery.lable === '' && pagelistquery.tag === ''
                     ? 'active'
                     : ''
                 "
-                @click="changelable('')"
-              >
-                <a>全部</a>
-              </li>
-              <li
-                v-for="(lable, id) in lables"
-                :key="id"
-                :class="pagelistquery.lable === lable ? 'active' : ''"
-                @click="changelable(lable)"
-              >
-                <a>{{ lable }}</a>
-              </li>
-              <li
-                v-if="pagelistquery.tag != ''"
-                class="active"
-                @click="changelable('')"
-              >
-                <a>{{ this.pagelistquery.tag }}</a>
+              @click="changelable('')"
+            >
+              <a>全部</a>
+            </li>
+            <li
+              v-for="(lable, id) in lables"
+              :key="id"
+              :class="pagelistquery.lable === lable ? 'active' : ''"
+              @click="changelable(lable)"
+            >
+              <a>{{ lable }}</a>
+            </li>
+            <li v-if="pagelistquery.tag != ''" class="active" @click="changelable('')">
+              <a>{{ this.pagelistquery.tag }}</a>
+            </li>
+          </ul>
+          <section class="widget">
+            <ul class="articles">
+              <li class="article-entry standard" v-for="(item, id) in tableData" :key="id">
+                <h4>
+                  <router-link :to="'/helpcontent/' + item.help_id">
+                    {{
+                    item.help_title
+                    }}
+                  </router-link>
+                </h4>
+                <span class="article-meta">
+                  <a class="iconfont">&#xe619;</a>
+                  {{ item.createtime | dataFormat }}
+                  <a
+                    class="iconfont"
+                    style="margin-left:50px"
+                  >&#xe688;</a>
+                </span>
+                <span class="like-count">
+                  <a class="iconfont">&#xe61c;</a>
+                  {{ item.help_read_num }}
+                </span>
               </li>
             </ul>
-            <section class="widget">
-              <ul class="articles">
-                <li
-                  class="article-entry standard"
-                  v-for="(item, id) in tableData"
-                  :key="id"
-                >
-                  <h4>
-                    <router-link :to="'/helpcontent/' + item.help_id">{{
-                      item.help_title
-                    }}</router-link>
-                  </h4>
-                  <span class="article-meta">
-                    <a class="iconfont">&#xe619;</a>
-                    {{ item.createtime | dataFormat }}
-                    <a class="iconfont" style="margin-left:50px">&#xe688;</a>
-                  </span>
-                  <span class="like-count">
-                    <a class="iconfont">&#xe61c;</a>{{ item.help_read_num }}
-                  </span>
-                </li>
-              </ul>
-            </section>
-            <el-pagination
-              @current-change="handleCurrentChange"
-              layout="prev, pager, next"
-              :total="pagelistquery.total"
-            ></el-pagination>
-          </div>
-        
-          <aside class="span4 page-sidebar aside">
-            <carousel />
-            <oldstuffhot />
-          </aside>
+          </section>
+          <el-pagination
+            @current-change="handleCurrentChange"
+            layout="prev, pager, next"
+            :total="pagelistquery.total"
+          ></el-pagination>
+        </div>
 
-       
+        <div class="page-aside">
+          <carousel />
+          <oldstuffhot />
         </div>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -162,13 +153,30 @@ export default {
 <style scoped>
 .helper {
   min-height: 200px;
- 
 }
-.row{
- padding: 10px;
- display: flex;
+.row {
+  padding: 10px;
+  display: flex;
 }
-.aside{
+.aside {
   margin-left: 100px;
+}
+.contents {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.page-contents {
+  padding: 10px;
+
+  background-color: #fff;
+  flex: 1;
+}
+.page-aside {
+  padding: 10px;
+  margin-left: 15px;
+  width: 300px;
+  background-color: #fff;
+  overflow: hidden;
 }
 </style>

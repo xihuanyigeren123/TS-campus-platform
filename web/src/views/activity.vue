@@ -2,21 +2,17 @@
   <div class="help">
     <div v-title data-title="学生信息交流平台  | 活动"></div>
 
-    <!-- Start of Page Container -->
     <div class="page-container">
-      <div class="container">
-        <div class="row">
-          <!-- start of page content -->
-          <div class="span8 page-content">
+      <div class="contents">
+       
+          <div class="page-contents">
             <div>
-              <h3 class="title">活动区</h3>
+              <h3 class="title">
+                <i class="el-icon-basketball"></i>校园活动
+              </h3>
             </div>
-            <!-- Basic Home Page Template -->
             <ul class="tabs-nav">
-              <li
-                :class="pagelistquery.lable === '' ? 'active' : ''"
-                @click="changelable('')"
-              >
+              <li :class="pagelistquery.lable === '' ? 'active' : ''" @click="changelable('')">
                 <a>全部</a>
               </li>
               <li
@@ -30,28 +26,26 @@
             </ul>
             <section class="widget">
               <ul class="articles">
-                <li
-                  class="article-entry standard"
-                  v-for="(activity, id) in tableData"
-                  :key="id"
-                >
+                <li class="article-entry standard" v-for="(activity, id) in tableData" :key="id">
                   <h4>
                     <router-link
                       :to="'/activitycontent/' + activity.activity_id"
-                      >{{ activity.activity_title }}</router-link
-                    >
+                    >{{ activity.activity_title }}</router-link>
                   </h4>
                   <span class="article-meta">
                     <a class="iconfont">&#xe619;</a>
                     {{ activity.createtime | dataFormat }}
-                    <a class="iconfont" style="margin-left:50px">&#xe609;</a>
+                    <a
+                      class="iconfont"
+                      style="margin-left:50px"
+                    >&#xe609;</a>
                     {{ activity.activity_locale }}
                   </span>
                   <span class="like-count">
-                    <span class="like-count">
-                      <a class="iconfont">&#xe61c;</a
-                      >{{ activity.activity_read_num }}
-                    </span>
+                  
+                      <i class="el-icon-view"></i>
+                      {{ activity.activity_read_num }}
+                   
                   </span>
                 </li>
               </ul>
@@ -62,18 +56,15 @@
               :total="pagelistquery.total"
             ></el-pagination>
           </div>
-          <!-- end of page content -->
-          <!-- start of sidebar -->
-          <aside class="span4 page-sidebar">
+      
+          <div class="page-aside">
             <carousel />
             <job />
-          </aside>
+          </div>
 
-          <!-- end of sidebar -->
-        </div>
+        
       </div>
     </div>
-    <!-- End of Page Container -->
   </div>
 </template>
 
@@ -139,8 +130,24 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
 .help {
   min-height: 200px;
+}
+.contents {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.page-contents {
+  background-color: #fff;
+  padding:10px;
+  flex: 1;
+}
+.page-aside {
+  margin-left: 15px;
+  width: 300px;
+  background-color: #fff;
+  overflow: hidden;
 }
 </style>

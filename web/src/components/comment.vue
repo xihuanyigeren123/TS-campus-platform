@@ -110,7 +110,7 @@
 
             <!-- end .comment-meta -->
 
-            <div class="comment-body" v-html="item.comment_content"></div>
+            <div class="comment-body" v-html="item.comment_content" style="margin-left:70px;"></div>
             <div class="comment-footer">
               <p @click="getreplybutton(item.comment_id, id)">查看所有回复 <i class="el-icon-arrow-down"></i></p>
               <p
@@ -293,7 +293,6 @@ export default {
       comment_id: '',
       touserid: '',
       tousernickname: '',
-
       commentlist: {},
       comment_content: ''
     }
@@ -427,13 +426,16 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
 .help {
   min-height: 200px;
 }
 .comment {
   margin-top: 10px;
   margin-left: 20px;
+}
+.comment-body{
+    margin-left:70px;
 }
 .comment-footer {
   height: 30px;
@@ -452,6 +454,7 @@ export default {
   text-align: center;
   padding: 10px;
   background-color: rgb(250, 244, 244);
+  border:1px solid #eee;
 }
 
 .touser {

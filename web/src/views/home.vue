@@ -1,23 +1,20 @@
 <template>
   <div class="home">
     <div v-title data-title="唐师人|首页"></div>
-      
-        <div class="content">
-          <div class="page-content">
-            <news />
-            <help />
-            <oldstuff />
-            
-          </div>
-          <!-- <aside class="span4 page-sidebar">
-            <section class="widget">
-              <carousel />
-              <activity />
-              <job />
-            </section>
-          </aside> -->
-        </div>
-      
+
+    <div class="contents">
+      <div class="page-contents">
+        <news />
+        <help />
+        <oldstuff />
+      </div>
+
+      <div class="page-aside">
+        <carousel />
+        <activity />
+        <job />
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -35,22 +32,31 @@ export default {
   components: {
     news,
     oldstuff,
-    // job,
-    // activity,
-    // carousel,
+    job,
+    activity,
+    carousel,
     help
   }
 }
 </script>
 <style scoped>
-.home{
-  padding:15px ;
-    background-color: #fff;
+.home {
+  padding: 15px;
+  /* background-color: #fff; */
 }
-.content {
-
-  padding: 0;
-  margin-top:120px;
-  /* width: 600px; */
+.contents {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.page-contents {
+  background-color: #fff;
+  flex: 1;
+}
+.page-aside {
+  margin-left: 15px;
+  width: 300px;
+  background-color: #fff;
+  overflow: hidden;
 }
 </style>

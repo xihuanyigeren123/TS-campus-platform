@@ -7,34 +7,33 @@
         class="page-header"
         style="position:relative;cursor:pointer"
       >
-        <h3>  <i class="el-icon-chat-dot-square"></i>  校园论坛</h3>
+        <h3>
+          <i class="el-icon-chat-dot-square"></i> 校园论坛
+        </h3>
         <h4 style="  position: absolute;right: 100px;top: 4px;">
           更多
           <i class="el-icon-arrow-right"></i>
         </h4>
       </router-link>
       <ul class="articles">
-        <li class="article-entry standard" v-for="(item, id) in tableData" :key="id">
+        <li class="article-_entry standar-d" v-for="(item, id) in tableData" :key="id">
           <h4>
+            <i class="el-icon-notebook-2"></i>
             <router-link :to="'/helpcontent/' + item.help_id">
               {{
               item.help_title
               }}
             </router-link>
           </h4>
-          <span class="article-meta">
-            <a class="iconfont">&#xe619;</a>
-            {{ item.createtime | dataFormat }}
-            <a
-              class="iconfont"
-              style="margin-left:50px"
-            >&#xe688;</a>
-          </span>
+          <span class="person">
+            <!-- <a class="iconfont" style="margin-left:5px">&#xe688;</a> -->
+            <i class="el-icon-user-solid"></i>
+            {{item.nickname}}
+          </span>|
+          <span class="article-meta">{{ item.createtime | dataFormat }}</span>|
           <span class="like-count">
-            <span class="like-count">
-              <a class="iconfont" style="color:red">&#xe647;</a>
-              {{ item.help_read_num }}
-            </span>
+            <i class="el-icon-s-opportunity" style="color:red;"></i>
+            {{ item.help_read_num }}
           </span>
         </li>
       </ul>
@@ -83,5 +82,8 @@ export default {
   box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
   padding: 10px;
   /* box-shadow: 5px 5px 5px  #ccc; */
+}
+.articles li span{
+padding: 0 5px;
 }
 </style>

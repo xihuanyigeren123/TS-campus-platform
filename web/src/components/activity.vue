@@ -28,10 +28,10 @@
               <a class="iconfont" style="margin-left:50px">&#xe609;</a>
               {{ activity.activity_locale }}
             </span>
-            <span class="like-count">
+            <!-- <span class="like-count">
               <a class="iconfont" style="color:red">&#xe647;</a>
               {{ activity.activity_read_num }}
-            </span>
+            </span> -->
           </li>
         </ul>
       </section>
@@ -71,4 +71,9 @@ export default {
 }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped></style>
+<style scoped>
+.activity{
+  padding: 10px;
+  box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+}
+</style>

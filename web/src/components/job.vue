@@ -86,4 +86,10 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped></style>
+<style scoped>
+.job{
+  padding: 10px;
+  box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+
+}
+  </style>

@@ -9,9 +9,10 @@
           <!-- start of page content -->
           <div class="span8 page-content">
             <article class="type-post format-standard hentry clearfix">
-              <h1 class="post-title">
+              <h2 class="post-title">
+                <i class="el-icon-reading"></i>
                 <a>{{ content.help_title }}</a>
-              </h1>
+              </h2>
 
               <div class="post-meta clearfix">
                 <span class="date">{{ content.createtime | dataFormat }}</span>
@@ -79,7 +80,7 @@
                     >{{ commentnum }} Comments</a
                   >
                 </span>
-                <span class="like-count">66</span>
+                <span class="like-count"></span>
               </div>
               <!-- end of post meta -->
               <blockquote v-html="content.help_content"></blockquote>
@@ -87,7 +88,7 @@
 
             <div class="like-btn">
               <form id="like-it-form" action="#" method="post">
-                <span class="like-it">66</span>
+                <span class="like-it"></span>
                 <input type="hidden" name="post_id" value="99" />
                 <input type="hidden" name="action" value="like_it" />
               </form>

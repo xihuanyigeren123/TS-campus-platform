@@ -2,93 +2,80 @@
   <div class="help">
     <div v-title data-title="  学生信息交流平台| 招聘"></div>
 
-    <!-- Start of Page Container -->
-    <div class="page-container">
-      <div class="container">
-        <div class="row">
-          <!-- start of page content -->
-          <div class="span8 page-content">
-            <div>
-              <h3>
-                岗位
-                <small>{{ smallttle }}</small>
-              </h3>
-            </div>
-            <!-- Basic Home Page Template -->
-            <ul class="tabs-nav">
-              <li
-                :class="
+    <div class="contents">
+      <div class="page-contents">
+        <div>
+          <h3>
+            <i class="el-icon-cherry"></i>
+            校园招聘
+          </h3>
+        </div>
+
+        <ul class="tabs-nav">
+          <li
+            :class="
                   pagelistquery.lable === '' && pagelistquery.tag === ''
                     ? 'active'
                     : ''
                 "
-                @click="changelable('')"
-              >
-                <a>全部</a>
-              </li>
-              <li
-                v-for="(lable, id) in lables"
-                :key="id"
-                :class="pagelistquery.lable === lable ? 'active' : ''"
-                @click="changelable(lable)"
-              >
-                <a>{{ lable }}</a>
-              </li>
-              <li
-                v-if="pagelistquery.tag != ''"
-                class="active"
-                @click="changelable('')"
-              >
-                <a>{{ this.pagelistquery.tag }}</a>
-              </li>
-            </ul>
-            <section class="widget">
-              <ul class="articles" style="min-height:730px">
-                <li
-                  class="article-entry standard"
-                  v-for="(item, id) in tableData"
-                  :key="id"
-                  style="position:relative"
-                >
-                  <h4>
-                    <router-link :to="'/jobcontent/' + item.job_id">{{
-                      item.job_name
-                    }}</router-link>
-                  </h4>
-                  <h4
-                    style="  position: absolute;right: 40px; top: 2px; color:red"
-                  >
-                    {{ item.job_salary }}
-                  </h4>
-                  <span class="article-meta">
-                    <a class="iconfont">&#xe619;</a>
-                    {{ item.job_createtime | dataFormat }}
-                    <a class="iconfont" style="margin-left:50px">&#xe679;</a>
-                    {{ item.company_name }}
-                  </span>
-                </li>
-              </ul>
-            </section>
-            <el-pagination
-              @current-change="handleCurrentChange"
-              layout="prev, pager, next"
-              :total="pagelistquery.total"
-            ></el-pagination>
-          </div>
-          <!-- end of page content -->
-          <!-- start of sidebar -->
-          <aside class="span4 page-sidebar">
-            <section class="widget">
-              <carousel />
-              <company />
-            </section>
-          </aside>
+            @click="changelable('')"
+          >
+            <a>全部</a>
+          </li>
+          <li
+            v-for="(lable, id) in lables"
+            :key="id"
+            :class="pagelistquery.lable === lable ? 'active' : ''"
+            @click="changelable(lable)"
+          >
+            <a>{{ lable }}</a>
+          </li>
+          <li v-if="pagelistquery.tag != ''" class="active" @click="changelable('')">
+            <a>{{ this.pagelistquery.tag }}</a>
+          </li>
+        </ul>
+        <section class="widget">
+          <ul class="articles" style="min-height:730px">
+            <li
+              class="article-entry standard"
+              v-for="(item, id) in tableData"
+              :key="id"
+              style="position:relative"
+            >
+              <h4>
+                <router-link :to="'/jobcontent/' + item.job_id">
+                  {{
+                  item.job_name
+                  }}
+                </router-link>
+              </h4>
+              <h4
+                style="  position: absolute;right: 40px; top: 2px; color:red"
+              >{{ item.job_salary }}</h4>
+              <span class="article-meta">
+                <a class="iconfont">&#xe619;</a>
+                {{ item.job_createtime | dataFormat }}
+                <a
+                  class="iconfont"
+                  style="margin-left:50px"
+                >&#xe679;</a>
+                {{ item.company_name }}
+              </span>
+            </li>
+          </ul>
+        </section>
+        <el-pagination
+          @current-change="handleCurrentChange"
+          layout="prev, pager, next"
+          :total="pagelistquery.total"
+        ></el-pagination>
+      </div>
 
-          <!-- end of sidebar -->
-        </div>
+      <div class="page-aside">
+        <carousel />
+        <company />
       </div>
     </div>
-    <!-- End of Page Container -->
   </div>
 </template>
 
@@ -162,8 +149,27 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
 .help {
   min-height: 200px;
 }
+.contents {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+}
+.page-contents {
+  background-color: #fff;
+  flex: 1;
+  padding: 10px;
+}
+.page-aside {
+  margin-left: 15px;
+  width: 300px;
+  background-color: #fff;
+  overflow: hidden;
+  padding: 10px;
+
+}
+
 </style>

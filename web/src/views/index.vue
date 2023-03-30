@@ -71,7 +71,6 @@
           </div>
         </div>
       </el-header>
-
       <el-aside style=" width: 200px;">
         <div class="nav">
           <el-menu default-active="2" class="el-menu-vertical-demo" router>
@@ -83,54 +82,44 @@
               <!-- <el-menu-item-group>
                 <el-menu-item index="/">....</el-menu-item>
                 <el-menu-item index="1-2">...</el-menu-item>
-              </el-menu-item-group> -->
+              </el-menu-item-group>-->
             </el-menu-item>
-
-            <el-submenu index="2">
+            <el-menu-item index="/help">
               <template slot="title">
                 <i class="el-icon-chat-dot-square"></i>
                 <span>校园论坛</span>
               </template>
-              <el-menu-item-group>
-                <!-- <template slot="title">分组一</template> -->
-                <el-menu-item index="/help">全部</el-menu-item>
-                <el-menu-item index="1-2">...</el-menu-item>
-              </el-menu-item-group>
-            </el-submenu>
+            </el-menu-item>
 
-            <el-submenu index="3">
+            <el-menu-item index="/activity">
               <template slot="title">
                 <i class="el-icon-basketball"></i>
                 <span>校园活动</span>
               </template>
-              <el-menu-item-group>
-                <!-- <template slot="title">分组一</template> -->
-                <el-menu-item index="/activity">全部</el-menu-item>
-                <el-menu-item index="1-2">...</el-menu-item>
-              </el-menu-item-group>
-            </el-submenu>
-            <el-submenu index="4">
+            </el-menu-item>
+
+            <el-menu-item index="/news">
               <template slot="title">
                 <i class="el-icon-monitor"></i>
                 <span>新闻资讯</span>
               </template>
-              <el-menu-item-group>
-                <!-- <template slot="title">分组一</template> -->
+              <!-- <el-menu-item-group>
+                <template slot="title">分组一</template>
                 <el-menu-item index="/news">全部</el-menu-item>
                 <el-menu-item index="1-2">...</el-menu-item>
-              </el-menu-item-group>
-            </el-submenu>
-            <el-submenu index="5">
+              </el-menu-item-group> -->
+            </el-menu-item>
+            <el-menu-item index="/oldstuff">
               <template slot="title">
                 <i class="el-icon-shopping-cart-1"></i>
                 <span>咸鱼市场</span>
               </template>
-              <el-menu-item-group>
-                <!-- <template slot="title">分组一</template> -->
+              <!-- <el-menu-item-group>
+                <template slot="title">分组一</template>
                 <el-menu-item index="/oldstuff">全部</el-menu-item>
                 <el-menu-item index="1-2">...</el-menu-item>
-              </el-menu-item-group>
-            </el-submenu>
+              </el-menu-item-group> -->
+            </el-menu-item>
 
             <el-submenu index="6">
               <template slot="title">
@@ -139,7 +128,7 @@
               </template>
               <el-menu-item-group>
                 <!-- <template slot="title">分组一</template> -->
-                <el-menu-item index="/oldstuff">全部</el-menu-item>
+                <el-menu-item index="/job">全部</el-menu-item>
                 <el-menu-item index="1-2">...</el-menu-item>
               </el-menu-item-group>
             </el-submenu>
@@ -168,22 +157,23 @@
           </el-menu>
         </div>
       </el-aside>
-        <el-main>
-          <div class="content">
-            <el-row>
-              <!-- <el-col :span="3"></el-col> -->
-              <el-col :span="10" :offset="6">
-                <div class="grid-content bg-purple">
-                  <router-view />
-                </div>
-              </el-col>
-            </el-row>
-          </div>
-        </el-main>
-        <el-footer>
-          <foot />
-        </el-footer>
-   
+      <div class="img">
+        <el-image src="https://www.tstc.edu.cn/images/18/12/12/1evmew9vkf/101.jpg"></el-image>
+      </div>
+      <el-main>
+        <div class="content">
+          <el-row :gutter="20">
+            <el-col :span="16" :offset="5">
+              <div class="grid-content bg-purple">
+                <router-view />
+              </div>
+            </el-col>
+          </el-row>
+        </div>
+      </el-main>
+      <el-footer>
+        <foot />
+      </el-footer>
     </el-container>
 
     <!-- 弹窗组件 -->
@@ -317,7 +307,7 @@ export default {
         this.$message.error('两次密码不相等')
         return
       }
-      let obj = {
+      const obj = {
         password: this.password,
         username: this.username
       }
@@ -426,8 +416,15 @@ export default {
   position: fixed;
   z-index: 1;
 }
+.img {
+  padding: 70px 100px 0 220px;
+}
 .el-main {
-  padding: 0;
+  /* margin-left: 200px; */
+  /* width: 100vw; */
+}
+.el-footer {
+  padding-left: 200px;
 }
 .index .nav {
   margin-top: 80px;

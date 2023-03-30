@@ -1,80 +1,66 @@
 <template>
   <div class="help">
-    <div v-title data-title="   学生信息交流平台|  二手信息"></div>
-    <!-- Start of Page Container -->
-    <div class="page-container">
-      <div class="container">
-        <div class="row">
-          <!-- start of page content -->
-          <div class="span8 page-content">
-            <div>
-              <h3 class="title">二手交易中心</h3>
-            </div>
-            <!-- Basic Home Page Template -->
-            <ul class="tabs-nav">
-              <li
-                :class="pagelistquery.lable === '' ? 'active' : ''"
-                @click="changelable('')"
-              >
-                <a>全部</a>
-              </li>
-              <li
-                v-for="(lable, id) in lables"
-                :key="id"
-                :class="pagelistquery.lable === lable ? 'active' : ''"
-                @click="changelable(lable)"
-              >
-                <a>{{ lable }}</a>
-              </li>
-            </ul>
-            <section class="widget">
-              <div class="row">
-                <div
-                  style="margin :1%"
-                  class="col-sm-6 col-md-4"
-                  v-for="(oldstuff, id) in tableData"
-                  :key="id"
-                >
-                  <router-link :to="'/oldstuffcontent/' + oldstuff.oldstuff_id">
-                    <div class="thumbnail">
-                      <img
-                        data-src="holder.js/100%x200"
-                        alt="100%x200"
-                        :src="oldstuff.oldstuff_img"
-                        data-holder-rendered="true"
-                        style="height: 200px; object-fit: cover;width: 100%; display: block;"
-                      />
-                      <div class="caption">
-                        <h3 style="color:red">
-                          ￥{{ oldstuff.oldstuff_price }}
-                        </h3>
-                        <p>{{ oldstuff.oldstuff_name }}</p>
-                      </div>
-                    </div>
-                  </router-link>
+    <div v-title data-title="唐师人|  咸鱼"></div>
+
+    <div class="contents">
+      <div class="page-contents">
+        <h3 class="title">
+          <i class="el-icon-shopping-cart-1"></i>咸鱼市场
+        </h3>
+
+        <ul class="tabs-nav">
+          <li :class="pagelistquery.lable === '' ? 'active' : ''" @click="changelable('')">
+            <a>全部</a>
+          </li>
+          <li
+            v-for="(lable, id) in lables"
+            :key="id"
+            :class="pagelistquery.lable === lable ? 'active' : ''"
+            @click="changelable(lable)"
+          >
+            <a>{{ lable }}</a>
+          </li>
+        </ul>
+        <section class="widget">
+          <div
+        
+            style="margin :1%"
+            class="img"
+            v-for="(oldstuff, id) in tableData"
+            :key="id"
+           
+          >
+            <router-link :to="'/oldstuffcontent/' + oldstuff.oldstuff_id">
+              <div class="thumbnail">
+                <img
+                  data-src="holder.js/100%x200"
+                  alt="100%x200"
+                  :src="oldstuff.oldstuff_img"
+                  data-holder-rendered="true"
+                  style="height: 200px; object-fit: cover;width: 150px; display: block;"
+                />
+                <div class="caption">
+                  <h3 style="color:red">￥{{ oldstuff.oldstuff_price }}</h3>
+                  <p>{{ oldstuff.oldstuff_name }}</p>
                 </div>
               </div>
-            </section>
-            <el-pagination
-              @current-change="handleCurrentChange"
-              layout="prev, pager, next"
-              :total="pagelistquery.total"
-              :page-size="pagelistquery.pagesize"
-            ></el-pagination>
+            </router-link>
           </div>
-          <!-- end of page content -->
-          <!-- start of sidebar -->
-          <aside class="span4 page-sidebar">
-            <carousel />
-            <activity />
-            <news />
-          </aside>
+        </section>
+        <el-pagination
+          @current-change="handleCurrentChange"
+          layout="prev, pager, next"
+          :total="pagelistquery.total"
+          :page-size="pagelistquery.pagesize"
+        ></el-pagination>
+      </div>
 
-          <!-- end of sidebar -->
-        </div>
+      <div class="page-aside">
+        <carousel />
+        <activity />
+        <news />
       </div>
     </div>
-    <!-- End of Page Container -->
   </div>
 </template>
 
@@ -140,14 +126,29 @@ export default {
 }
 </script>
 <style>
-.col-sm-6 {
-  float: left;
-}
+
 .help {
   min-height: 200px;
 }
-.row {
-  margin-top: 20px;
+
+.contents {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.page-contents {
+  background-color: #fff;
+  flex: 1;
+  padding: 10px;
+}
+.pages-contents .img{
+  display: flex;
+}
+.page-aside {
+  margin-left: 15px;
+  width: 300px;
+  background-color: #fff;
+  overflow: hidden;
 }
 @media (min-width: 768px) {
   .col-sm-6 {

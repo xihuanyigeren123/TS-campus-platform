@@ -1,11 +1,9 @@
 <template>
   <div class="help">
-    <!-- Start of Page Container -->
-    <div class="page-container">
-      <div class="container">
-        <div class="row">
+ 
+        <div class="contents">
           <!-- start of page content -->
-          <div class="span8 page-content">
+          <div class="page-contents">
             <el-page-header
               @back="$router.back(-1)"
               content="详情页面"
@@ -137,20 +135,16 @@
             </div>
 
             <comment />
-            <!-- end of comments -->
-            <!-- end of page content -->
+         
           </div>
-          <aside class="span4 page-sidebar">
+          <aside class="page-aside">
             <carousel />
             <oldstuffhot />
           </aside>
 
-          <!-- end of sidebar -->
         </div>
       </div>
-    </div>
-    <!-- End of Page Container -->
-  </div>
+   
 </template>
 
 <script>

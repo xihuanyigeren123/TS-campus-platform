@@ -2,12 +2,10 @@
   <div class="activitycontent">
     <div v-title data-title="  | 公司详情"></div>
 
-    <!-- Start of Page Container -->
-    <div class="page-container">
-      <div class="container">
-        <div class="row">
-          <!-- start of page content -->
-          <div class="span8 page-content">
+    
+      <div class="contents">
+     
+          <div class="page-contents">
             <el-page-header
               @back="$router.back(-1)"
               :content="content.company_name"
@@ -47,27 +45,24 @@
 
             <div class="like-btn">
               <form id="like-it-form" action="#" method="post">
-                <span class="like-it">66</span>
+                <span class="like-it"></span>
                 <input type="hidden" name="post_id" value="99" />
                 <input type="hidden" name="action" value="like_it" />
               </form>
             </div>
 
             <comment />
-            <!-- end of comments -->
-            <!-- end of page content -->
+          
           </div>
-          <aside class="span4 page-sidebar">
+          <aside class="page-aside">
             <carousel />
             <company />
           </aside>
 
-          <!-- end of sidebar -->
+      
         </div>
       </div>
-    </div>
-    <!-- End of Page Container -->
-  </div>
+   
 </template>
 
 <script>

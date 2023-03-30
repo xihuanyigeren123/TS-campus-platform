@@ -84,6 +84,17 @@
                 <el-menu-item index="1-2">...</el-menu-item>
               </el-menu-item-group>-->
             </el-menu-item>
+             <el-submenu index="7">
+              <template slot="title">
+                <i class="el-icon-message"></i>
+                <span>校园简介</span>
+              </template>
+              <el-menu-item-group>
+                <!-- <template slot="title">分组一</template> -->
+                <el-menu-item index="/job">全部</el-menu-item>
+                <el-menu-item index="1-2">...</el-menu-item>
+              </el-menu-item-group>
+            </el-submenu>
             <el-menu-item index="/help">
               <template slot="title">
                 <i class="el-icon-chat-dot-square"></i>
@@ -121,28 +132,18 @@
               </el-menu-item-group> -->
             </el-menu-item>
 
-            <el-submenu index="6">
+            <el-menu-item index="/job">
               <template slot="title">
                 <i class="el-icon-cherry"></i>
                 <span>校园招聘</span>
               </template>
-              <el-menu-item-group>
-                <!-- <template slot="title">分组一</template> -->
+              <!-- <el-menu-item-group>
+                <template slot="title">分组一</template>
                 <el-menu-item index="/job">全部</el-menu-item>
                 <el-menu-item index="1-2">...</el-menu-item>
-              </el-menu-item-group>
-            </el-submenu>
-            <el-submenu index="7">
-              <template slot="title">
-                <i class="el-icon-message"></i>
-                <span>校园简介</span>
-              </template>
-              <el-menu-item-group>
-                <!-- <template slot="title">分组一</template> -->
-                <el-menu-item index="/job">全部</el-menu-item>
-                <el-menu-item index="1-2">...</el-menu-item>
-              </el-menu-item-group>
-            </el-submenu>
+              </el-menu-item-group> -->
+            </el-menu-item>
+           
             <el-submenu index="8">
               <template slot="title">
                 <i class="el-icon-connection"></i>

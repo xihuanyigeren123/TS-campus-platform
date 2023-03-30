@@ -2,12 +2,11 @@
   <div class="activitycontent">
     <div v-title data-title="  | 岗位详情"></div>
 
-    <!-- Start of Page Container -->
-    <div class="page-container">
-      <div class="container">
-        <div class="row">
-          <!-- start of page content -->
-          <div class="span8 page-content">
+  
+    
+        <div class="contents">
+      
+          <div class="page-contents">
             <el-page-header
               @back="$router.back(-1)"
               :content="content.job_name"
@@ -39,6 +38,11 @@
                   <a class="tagname">投递方式:</a>
                   {{ content.company_mail }}
                 </div>
+                 <div class="show_unit fl ativity">
+                  <a class="iconfont ic">&#xe619;</a>
+                  <a class="tagname">工作经验:</a>
+                  {{ content.job_working }}
+                </div>
                 <div style="clear:both"></div>
                 <!--占位-->
               </div>
@@ -62,18 +66,16 @@
             </div>
 
             <comment />
-            <!-- end of comments -->
-            <!-- end of page content -->
+         
           </div>
-          <aside class="span4 page-sidebar">
+          <aside class="page-aside">
             <carousel />
             <job />
           </aside>
-          <!-- end of sidebar -->
+        
         </div>
-      </div>
-    </div>
-    <!-- End of Page Container -->
+     
+    
   </div>
 </template>
 

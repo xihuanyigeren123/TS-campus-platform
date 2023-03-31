@@ -26,7 +26,7 @@
                     <a style="color: #c1cad1;">
                       <img
                         v-if="unread == 0"
-                        style="     height: 20px; "
+                        style="height: 20px; "
                         :src="avatar"
                         class="avatar touxiang avatar-60 photo"
                         height="20"
@@ -418,7 +418,8 @@ export default {
   z-index: 1;
 }
 .img {
-  padding: 70px 100px 0 220px;
+  margin: 70px 0px 0 220px;
+  object-fit: fill;
 }
 .el-main {
   /* margin-left: 200px; */

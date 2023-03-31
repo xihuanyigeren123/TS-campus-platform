@@ -41,10 +41,6 @@ router.post('/web/search', service.search)
 
 
 
-
-
-
-
 router.post('/web/getnotice', service.getnotice)
 router.post('/web/changenotice', service.changenotice)
 

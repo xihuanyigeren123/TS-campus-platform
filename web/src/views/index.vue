@@ -14,11 +14,33 @@
                   <span class="tag-line" style="font-size: 20px">唐师人</span>
                 </router-link>
               </el-col>
-              <el-col :span="6">
-                <div class="grid-content bg-purple">北京----天气</div>
+              <el-col :span="8">
+                <div class="grid-content bg-purple" style="line-height:45px;">北京----天气</div>
               </el-col>
-              <el-col :span="6">
-                <div class="grid-content bg-purple">
+              <el-col :span="8">
+                <span style="font-size: 15px ;line-height:45px;">
+                  <i class="el-icon-notebook-2"></i>
+                  {{text}}
+                </span>
+              </el-col>
+              <el-col :span="2" style="line-height:45px;text-align:center;">
+                <span style="background-color:#1989FA;color:white;padding:10px 20px;border-radius:5px;" @click="navigateToadmin"><i class="el-icon-edit"></i>发布</span>
+                <!-- <el-dropdown>
+                  <el-button type="primary">
+                    发布中心
+                    <i class="el-icon-arrow-down el-icon--right"></i>
+                  </el-button>
+                  <el-dropdown-menu slot="dropdown">
+                    <el-dropdown-item>黄金糕</el-dropdown-item>
+                    <el-dropdown-item>狮子头</el-dropdown-item>
+                    <el-dropdown-item>螺蛳粉</el-dropdown-item>
+                    <el-dropdown-item>双皮奶</el-dropdown-item>
+                    <el-dropdown-item>蚵仔煎</el-dropdown-item>
+                  </el-dropdown-menu>
+                </el-dropdown> -->
+              </el-col>
+              <el-col :span="2">
+                <div class="grid-content bg-purple" style="line-height:45px;">
                   <span v-if="avatar == ''">
                     <a @click="closein">登录/注册</a>
                   </span>
@@ -84,15 +106,17 @@
                 <el-menu-item index="1-2">...</el-menu-item>
               </el-menu-item-group>-->
             </el-menu-item>
-             <el-submenu index="7">
+            <el-submenu index="7">
               <template slot="title">
                 <i class="el-icon-message"></i>
                 <span>校园简介</span>
               </template>
               <el-menu-item-group>
                 <!-- <template slot="title">分组一</template> -->
-                <el-menu-item index="/job">全部</el-menu-item>
-                <el-menu-item index="1-2">...</el-menu-item>
+                <el-menu-item index="/job">简要介绍</el-menu-item>
+                <el-menu-item index="1-2">校园风光</el-menu-item>
+                <el-menu-item index="1-2">校园风光</el-menu-item>
+                <el-menu-item index="1-2">校园风光</el-menu-item>
               </el-menu-item-group>
             </el-submenu>
             <el-menu-item index="/help">
@@ -118,7 +142,7 @@
                 <template slot="title">分组一</template>
                 <el-menu-item index="/news">全部</el-menu-item>
                 <el-menu-item index="1-2">...</el-menu-item>
-              </el-menu-item-group> -->
+              </el-menu-item-group>-->
             </el-menu-item>
             <el-menu-item index="/oldstuff">
               <template slot="title">
@@ -129,7 +153,7 @@
                 <template slot="title">分组一</template>
                 <el-menu-item index="/oldstuff">全部</el-menu-item>
                 <el-menu-item index="1-2">...</el-menu-item>
-              </el-menu-item-group> -->
+              </el-menu-item-group>-->
             </el-menu-item>
 
             <el-menu-item index="/job">
@@ -141,9 +165,9 @@
                 <template slot="title">分组一</template>
                 <el-menu-item index="/job">全部</el-menu-item>
                 <el-menu-item index="1-2">...</el-menu-item>
-              </el-menu-item-group> -->
+              </el-menu-item-group>-->
             </el-menu-item>
-           
+
             <el-submenu index="8">
               <template slot="title">
                 <i class="el-icon-connection"></i>
@@ -224,7 +248,58 @@ export default {
       password1: '',
       username: '',
       hover: false,
-      search: ''
+      search: '',
+      text: '',
+      title: [
+        '你只管努力，剩下的交给时间',
+
+        '如今我努力奔跑，不过是为了追上那个曾经被寄予厚望的自己',
+
+        '要有最朴素的生活和最遥远的梦想，即使明天天寒地冻，山高水远，路远马亡',
+
+        '成功的秘诀就是每天都比别人多努力一点',
+
+        '别抱怨努力的苦，那是你去看世界的路',
+
+        '你必须非常努力，才能看起来毫不费力',
+
+        '当你在荒废时间，有多少人在拼命。别在最该奋斗的日子，选择了安逸',
+
+        '在你想要放弃的那一刻，想想为什么当初坚持走到了这里',
+
+        '任何不走心的努力都是敷衍你自己',
+
+        '再小的努力，乘以365都很明显',
+
+        '专注你的梦想，做自己的英雄',
+
+        '选一个方向，定一个时间；剩下的只管努力与坚持，时间会给我们最后的答案',
+
+        '不要假装努力，结果不会陪你演戏',
+
+        '当你真正喜欢做一件事时，自律就会成为你的本能',
+
+        '梦想，可以天花乱坠，理想，是我们一-步一个脚印踩出来的坎坷道路',
+
+        '你所做的一切努力并不会立即给你想要的一切 但可以让你逐渐成为你想成为的那一种人',
+
+        '努力成为自己喜欢的那种人 就算不成功 至少你会喜欢 这样努力的自己',
+
+        '你的压力来源于无法自律只是假装努力',
+        '为梦想选择了远方，便没有回头路可以走。所以，要么战死沙场，要么狼狈回乡',
+        '没有退路，只能让自己变得强大',
+        '每天早上醒来时，我们可以有两个简单的选择：回头去睡，继续做梦。或者，起身去追逐梦想',
+
+        '人生就是这样，要耐的住寂寞，才守得住繁华',
+
+        '喜欢就要争取，不行就要努力',
+
+        '只有经历地狱般的磨练，才能炼出创造天堂的力量',
+
+        '梦想不是空口无凭的大话，而是在寂静的奋斗里努力生长的果实',
+
+        '努力把平凡的日子堆砌成伟大的人生'
+      ]
     }
   },
   computed: {
@@ -388,13 +463,26 @@ export default {
       )
       console.log(res.data)
       this.setunread(res.data.data.count)
+    },
+    getRandomTitle() {
+      let num = Math.floor(Math.random() * 25)
+      this.text = this.title[num]
+    },
+    navigateToadmin(){
+  window.open(
+        this.$router.resolve({
+          path: "/admin/createhelplist",
+        
+        }).href,
+        "_blank"
+      );
     }
   },
   created() {
     localStorage.luffy_jwt_token && this.getnocitenmu()
   },
   mounted() {
-    console.log(this.$store, '22')
+    this.getRandomTitle()
   }
 }
 </script>

@@ -1,0 +1,191 @@
+Date : 2023-03-31 16:27:24
+Directory : c:\Users\dark\Desktop\lxbishe
+Total : 106 files,  85303 codes, 678 comments, 1705 blanks, all 87686 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JSON       |          7 |     63,741 |          0 |          7 |     63,748 |
+| Vue        |         58 |     10,286 |        184 |        393 |     10,863 |
+| CSS        |          8 |      7,571 |        108 |      1,009 |      8,688 |
+| JavaScript |         27 |      3,091 |        262 |        205 |      3,558 |
+| SQL        |          1 |        426 |        122 |         38 |        586 |
+| Markdown   |          3 |        153 |          0 |         47 |        200 |
+| HTML       |          2 |         35 |          2 |          6 |         43 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++--------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                 | files      | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                    |        106 |     85,303 |        678 |      1,705 |     87,686 |
+| . (Files)                                                                            |          2 |        186 |          0 |         36 |        222 |
+| admin                                                                                |         28 |     30,086 |         62 |        135 |     30,283 |
+| admin (Files)                                                                        |          5 |     26,205 |          0 |          9 |     26,214 |
+| admin\public                                                                         |          1 |         19 |          1 |          3 |         23 |
+| admin\src                                                                            |         22 |      3,862 |         61 |        123 |      4,046 |
+| admin\src (Files)                                                                    |          2 |         86 |         18 |         11 |        115 |
+| admin\src\assets                                                                     |          1 |         17 |          0 |          2 |         19 |
+| admin\src\assets\css                                                                 |          1 |         17 |          0 |          2 |         19 |
+| admin\src\components                                                                 |          1 |         56 |          0 |          3 |         59 |
+| admin\src\plugins                                                                    |          1 |          4 |          0 |          2 |          6 |
+| admin\src\router                                                                     |          1 |         55 |          0 |          3 |         58 |
+| admin\src\store                                                                      |          2 |        110 |          0 |         10 |        120 |
+| admin\src\store (Files)                                                              |          1 |         44 |          0 |          7 |         51 |
+| admin\src\store\modules                                                              |          1 |         66 |          0 |          3 |         69 |
+| admin\src\views                                                                      |         14 |      3,534 |         43 |         92 |      3,669 |
+| admin\src\views (Files)                                                              |          3 |        352 |         18 |         10 |        380 |
+| admin\src\views\examine                                                              |          2 |        885 |          0 |         25 |        910 |
+| admin\src\views\kefu                                                                 |          3 |        726 |          3 |         18 |        747 |
+| admin\src\views\management                                                           |          2 |        345 |          5 |         10 |        360 |
+| admin\src\views\myself                                                               |          1 |        220 |          0 |          5 |        225 |
+| admin\src\views\numbering                                                            |          1 |        255 |          9 |          4 |        268 |
+| admin\src\views\user                                                                 |          2 |        751 |          8 |         20 |        779 |
+| server                                                                               |         14 |      6,460 |        206 |        161 |      6,827 |
+| server (Files)                                                                       |          3 |      4,096 |          4 |          8 |      4,108 |
+| server\plugins                                                                       |          5 |         94 |          1 |          3 |         98 |
+| server\routers                                                                       |          6 |      2,270 |        201 |        150 |      2,621 |
+| server\routers\admin                                                                 |          2 |        733 |         43 |         34 |        810 |
+| server\routers\web                                                                   |          2 |        600 |         47 |         53 |        700 |
+| server\routers\webadmin                                                              |          2 |        937 |        111 |         63 |      1,111 |
+| web                                                                                  |         61 |     48,145 |        288 |      1,335 |     49,768 |
+| web (Files)                                                                          |          5 |     33,461 |          8 |         10 |     33,479 |
+| web\public                                                                           |          1 |         16 |          1 |          3 |         20 |
+| web\src                                                                              |         55 |     14,668 |        279 |      1,322 |     16,269 |
+| web\src (Files)                                                                      |          2 |        119 |         21 |         15 |        155 |
+| web\src\assets                                                                       |          7 |      7,554 |        108 |      1,007 |      8,669 |
+| web\src\assets\css                                                                   |          7 |      7,554 |        108 |      1,007 |      8,669 |
+| web\src\components                                                                   |         11 |      1,263 |         20 |         52 |      1,335 |
+| web\src\plugins                                                                      |          1 |          4 |          0 |          2 |          6 |
+| web\src\router                                                                       |          1 |        215 |          8 |          6 |        229 |
+| web\src\store                                                                        |          2 |        110 |          1 |          3 |        114 |
+| web\src\store (Files)                                                                |          1 |         44 |          1 |          2 |         47 |
+| web\src\store\modules                                                                |          1 |         66 |          0 |          1 |         67 |
+| web\src\utils                                                                        |          1 |          0 |          0 |          1 |          1 |
+| web\src\views                                                                        |         30 |      5,403 |        121 |        236 |      5,760 |
+| web\src\views (Files)                                                                |          8 |      1,799 |         31 |         85 |      1,915 |
+| web\src\views\content                                                                |          6 |      1,184 |         24 |         86 |      1,294 |
+| web\src\views\kefu                                                                   |          3 |        469 |          9 |          9 |        487 |
+| web\src\views\webadmin                                                               |         13 |      1,951 |         57 |         56 |      2,064 |
+| web\src\views\webadmin (Files)                                                       |          4 |        562 |         14 |         16 |        592 |
+| web\src\views\webadmin\activity                                                      |          2 |        385 |         10 |         16 |        411 |
+| web\src\views\webadmin\article                                                       |          2 |        218 |          4 |          5 |        227 |
+| web\src\views\webadmin\help                                                          |          2 |        280 |         12 |          2 |        294 |
+| web\src\views\webadmin\job                                                           |          1 |        184 |          7 |          8 |        199 |
+| web\src\views\webadmin\oldstuff                                                      |          2 |        322 |         10 |          9 |        341 |
+| 数据库                                                                                  |          1 |        426 |        122 |         38 |        586 |
++--------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++--------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                             | language   | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\Users\dark\Desktop\lxbishe\README.md                                              | Markdown   |        115 |          0 |         35 |        150 |
+| c:\Users\dark\Desktop\lxbishe\admin\README.md                                        | Markdown   |         19 |          0 |          6 |         25 |
+| c:\Users\dark\Desktop\lxbishe\admin\babel.config.js                                  | JavaScript |          5 |          0 |          1 |          6 |
+| c:\Users\dark\Desktop\lxbishe\admin\package-lock.json                                | JSON       |     26,118 |          0 |          1 |     26,119 |
+| c:\Users\dark\Desktop\lxbishe\admin\package.json                                     | JSON       |         58 |          0 |          1 |         59 |
+| c:\Users\dark\Desktop\lxbishe\admin\public\index.html                                | HTML       |         19 |          1 |          3 |         23 |
+| c:\Users\dark\Desktop\lxbishe\admin\src\App.vue                                      | Vue        |         13 |          0 |          4 |         17 |
+| c:\Users\dark\Desktop\lxbishe\admin\src\assets\css\ali.css                           | CSS        |         17 |          0 |          2 |         19 |
+| c:\Users\dark\Desktop\lxbishe\admin\src\components\HelloWorld.vue                    | Vue        |         56 |          0 |          3 |         59 |
+| c:\Users\dark\Desktop\lxbishe\admin\src\main.js                                      | JavaScript |         73 |         18 |          7 |         98 |
+| c:\Users\dark\Desktop\lxbishe\admin\src\plugins\element.js                           | JavaScript |          4 |          0 |          2 |          6 |
+| c:\Users\dark\Desktop\lxbishe\admin\src\router\index.js                              | JavaScript |         55 |          0 |          3 |         58 |
+| c:\Users\dark\Desktop\lxbishe\admin\src\store\index.js                               | JavaScript |         44 |          0 |          7 |         51 |
+| c:\Users\dark\Desktop\lxbishe\admin\src\store\modules\user.js                        | JavaScript |         66 |          0 |          3 |         69 |
+| c:\Users\dark\Desktop\lxbishe\admin\src\views\examine\comment.vue                    | Vue        |        327 |          0 |         12 |        339 |
+| c:\Users\dark\Desktop\lxbishe\admin\src\views\examine\contentexamine.vue             | Vue        |        558 |          0 |         13 |        571 |
+| c:\Users\dark\Desktop\lxbishe\admin\src\views\kefu\fankui.vue                        | Vue        |        208 |          1 |          6 |        215 |
+| c:\Users\dark\Desktop\lxbishe\admin\src\views\kefu\jubao.vue                         | Vue        |        283 |          1 |          6 |        290 |
+| c:\Users\dark\Desktop\lxbishe\admin\src\views\kefu\shensu.vue                        | Vue        |        235 |          1 |          6 |        242 |
+| c:\Users\dark\Desktop\lxbishe\admin\src\views\login.vue                              | Vue        |        169 |          1 |          2 |        172 |
+| c:\Users\dark\Desktop\lxbishe\admin\src\views\loginparticles.vue                     | Vue        |         26 |         17 |          1 |         44 |
+| c:\Users\dark\Desktop\lxbishe\admin\src\views\main.vue                               | Vue        |        157 |          0 |          7 |        164 |
+| c:\Users\dark\Desktop\lxbishe\admin\src\views\management\carousel.vue                | Vue        |        210 |          1 |          3 |        214 |
+| c:\Users\dark\Desktop\lxbishe\admin\src\views\management\managementlable.vue         | Vue        |        135 |          4 |          7 |        146 |
+| c:\Users\dark\Desktop\lxbishe\admin\src\views\myself\myself.vue                      | Vue        |        220 |          0 |          5 |        225 |
+| c:\Users\dark\Desktop\lxbishe\admin\src\views\numbering\numbering.vue                | Vue        |        255 |          9 |          4 |        268 |
+| c:\Users\dark\Desktop\lxbishe\admin\src\views\user\useradmin.vue                     | Vue        |        347 |          2 |         12 |        361 |
+| c:\Users\dark\Desktop\lxbishe\admin\src\views\user\useruser.vue                      | Vue        |        404 |          6 |          8 |        418 |
+| c:\Users\dark\Desktop\lxbishe\admin\vue.config.js                                    | JavaScript |          5 |          0 |          0 |          5 |
+| c:\Users\dark\Desktop\lxbishe\package-lock.json                                      | JSON       |         71 |          0 |          1 |         72 |
+| c:\Users\dark\Desktop\lxbishe\server\index.js                                        | JavaScript |         32 |          4 |          6 |         42 |
+| c:\Users\dark\Desktop\lxbishe\server\package-lock.json                               | JSON       |      4,038 |          0 |          1 |      4,039 |
+| c:\Users\dark\Desktop\lxbishe\server\package.json                                    | JSON       |         26 |          0 |          1 |         27 |
+| c:\Users\dark\Desktop\lxbishe\server\plugins\DataBase.ini.js                         | JavaScript |          7 |          0 |          1 |          8 |
+| c:\Users\dark\Desktop\lxbishe\server\plugins\config.js                               | JavaScript |          6 |          0 |          0 |          6 |
+| c:\Users\dark\Desktop\lxbishe\server\plugins\db.js                                   | JavaScript |         35 |          1 |          1 |         37 |
+| c:\Users\dark\Desktop\lxbishe\server\plugins\jwt.js                                  | JavaScript |         39 |          0 |          0 |         39 |
+| c:\Users\dark\Desktop\lxbishe\server\plugins\md5.js                                  | JavaScript |          7 |          0 |          1 |          8 |
+| c:\Users\dark\Desktop\lxbishe\server\routers\admin\index.js                          | JavaScript |         34 |          5 |         16 |         55 |
+| c:\Users\dark\Desktop\lxbishe\server\routers\admin\service.js                        | JavaScript |        699 |         38 |         18 |        755 |
+| c:\Users\dark\Desktop\lxbishe\server\routers\web\index.js                            | JavaScript |         24 |          7 |         37 |         68 |
+| c:\Users\dark\Desktop\lxbishe\server\routers\web\service.js                          | JavaScript |        576 |         40 |         16 |        632 |
+| c:\Users\dark\Desktop\lxbishe\server\routers\webadmin\index.js                       | JavaScript |         58 |         48 |         45 |        151 |
+| c:\Users\dark\Desktop\lxbishe\server\routers\webadmin\service.js                     | JavaScript |        879 |         63 |         18 |        960 |
+| c:\Users\dark\Desktop\lxbishe\web\README.md                                          | Markdown   |         19 |          0 |          6 |         25 |
+| c:\Users\dark\Desktop\lxbishe\web\babel.config.js                                    | JavaScript |          7 |          8 |          2 |         17 |
+| c:\Users\dark\Desktop\lxbishe\web\package-lock.json                                  | JSON       |     33,364 |          0 |          1 |     33,365 |
+| c:\Users\dark\Desktop\lxbishe\web\package.json                                       | JSON       |         66 |          0 |          1 |         67 |
+| c:\Users\dark\Desktop\lxbishe\web\public\index.html                                  | HTML       |         16 |          1 |          3 |         20 |
+| c:\Users\dark\Desktop\lxbishe\web\src\App.vue                                        | Vue        |         17 |          0 |          6 |         23 |
+| c:\Users\dark\Desktop\lxbishe\web\src\assets\css\ali.css                             | CSS        |         18 |          1 |          2 |         21 |
+| c:\Users\dark\Desktop\lxbishe\web\src\assets\css\blue-skin5152.css                   | CSS        |         95 |          5 |         14 |        114 |
+| c:\Users\dark\Desktop\lxbishe\web\src\assets\css\bootstrap5152.css                   | CSS        |      5,009 |         39 |        677 |      5,725 |
+| c:\Users\dark\Desktop\lxbishe\web\src\assets\css\green-skin5152.css                  | CSS        |        102 |          5 |         20 |        127 |
+| c:\Users\dark\Desktop\lxbishe\web\src\assets\css\main5152.css                        | CSS        |      1,226 |         45 |        132 |      1,403 |
+| c:\Users\dark\Desktop\lxbishe\web\src\assets\css\red-skin5152.css                    | CSS        |         46 |          4 |          9 |         59 |
+| c:\Users\dark\Desktop\lxbishe\web\src\assets\css\responsive5152.css                  | CSS        |      1,058 |          9 |        153 |      1,220 |
+| c:\Users\dark\Desktop\lxbishe\web\src\components\activity.vue                        | Vue        |         79 |          0 |          1 |         80 |
+| c:\Users\dark\Desktop\lxbishe\web\src\components\carousel.vue                        | Vue        |         72 |          0 |          4 |         76 |
+| c:\Users\dark\Desktop\lxbishe\web\src\components\comment.vue                         | Vue        |        432 |         17 |         15 |        464 |
+| c:\Users\dark\Desktop\lxbishe\web\src\components\company.vue                         | Vue        |         66 |          0 |          4 |         70 |
+| c:\Users\dark\Desktop\lxbishe\web\src\components\foot.vue                            | Vue        |        117 |          0 |          8 |        125 |
+| c:\Users\dark\Desktop\lxbishe\web\src\components\help.vue                            | Vue        |         86 |          1 |          3 |         90 |
+| c:\Users\dark\Desktop\lxbishe\web\src\components\job.vue                             | Vue        |         92 |          0 |          4 |         96 |
+| c:\Users\dark\Desktop\lxbishe\web\src\components\news.vue                            | Vue        |        114 |          1 |          5 |        120 |
+| c:\Users\dark\Desktop\lxbishe\web\src\components\oldstuff.vue                        | Vue        |         91 |          1 |          3 |         95 |
+| c:\Users\dark\Desktop\lxbishe\web\src\components\oldstuffhot.vue                     | Vue        |         72 |          0 |          2 |         74 |
+| c:\Users\dark\Desktop\lxbishe\web\src\components\person.vue                          | Vue        |         42 |          0 |          3 |         45 |
+| c:\Users\dark\Desktop\lxbishe\web\src\main.js                                        | JavaScript |        102 |         21 |          9 |        132 |
+| c:\Users\dark\Desktop\lxbishe\web\src\plugins\element.js                             | JavaScript |          4 |          0 |          2 |          6 |
+| c:\Users\dark\Desktop\lxbishe\web\src\router\index.js                                | JavaScript |        215 |          8 |          6 |        229 |
+| c:\Users\dark\Desktop\lxbishe\web\src\store\index.js                                 | JavaScript |         44 |          1 |          2 |         47 |
+| c:\Users\dark\Desktop\lxbishe\web\src\store\modules\user.js                          | JavaScript |         66 |          0 |          1 |         67 |
+| c:\Users\dark\Desktop\lxbishe\web\src\utils\service.js                               | JavaScript |          0 |          0 |          1 |          1 |
+| c:\Users\dark\Desktop\lxbishe\web\src\views\activity.vue                             | Vue        |        144 |          1 |          9 |        154 |
+| c:\Users\dark\Desktop\lxbishe\web\src\views\content\activitycontent.vue              | Vue        |        236 |          2 |         14 |        252 |
+| c:\Users\dark\Desktop\lxbishe\web\src\views\content\companycontent.vue               | Vue        |        129 |          9 |         17 |        155 |
+| c:\Users\dark\Desktop\lxbishe\web\src\views\content\helpcontent.vue                  | Vue        |        173 |          1 |         12 |        186 |
+| c:\Users\dark\Desktop\lxbishe\web\src\views\content\jobcontent.vue                   | Vue        |        141 |          9 |         15 |        165 |
+| c:\Users\dark\Desktop\lxbishe\web\src\views\content\newscontent.vue                  | Vue        |        246 |          2 |         16 |        264 |
+| c:\Users\dark\Desktop\lxbishe\web\src\views\content\oldstuffcontent.vue              | Vue        |        259 |          1 |         12 |        272 |
+| c:\Users\dark\Desktop\lxbishe\web\src\views\help.vue                                 | Vue        |        177 |          1 |          5 |        183 |
+| c:\Users\dark\Desktop\lxbishe\web\src\views\home.vue                                 | Vue        |         56 |          3 |          4 |         63 |
+| c:\Users\dark\Desktop\lxbishe\web\src\views\index.vue                                | Vue        |        573 |         21 |         34 |        628 |
+| c:\Users\dark\Desktop\lxbishe\web\src\views\job.vue                                  | Vue        |        168 |          1 |          7 |        176 |
+| c:\Users\dark\Desktop\lxbishe\web\src\views\kefu\fankui.vue                          | Vue        |        104 |          0 |          2 |        106 |
+| c:\Users\dark\Desktop\lxbishe\web\src\views\kefu\jubao.vue                           | Vue        |        142 |          3 |          2 |        147 |
+| c:\Users\dark\Desktop\lxbishe\web\src\views\kefu\shensu.vue                          | Vue        |        223 |          6 |          5 |        234 |
+| c:\Users\dark\Desktop\lxbishe\web\src\views\news.vue                                 | Vue        |        208 |          1 |         11 |        220 |
+| c:\Users\dark\Desktop\lxbishe\web\src\views\oldstuff.vue                             | Vue        |        153 |          1 |         10 |        164 |
+| c:\Users\dark\Desktop\lxbishe\web\src\views\search.vue                               | Vue        |        320 |          2 |          5 |        327 |
+| c:\Users\dark\Desktop\lxbishe\web\src\views\webadmin\activity\createactivity.vue     | Vue        |        243 |         10 |         12 |        265 |
+| c:\Users\dark\Desktop\lxbishe\web\src\views\webadmin\activity\createactivitylist.vue | Vue        |        142 |          0 |          4 |        146 |
+| c:\Users\dark\Desktop\lxbishe\web\src\views\webadmin\adminhome.vue                   | Vue        |        116 |          2 |          6 |        124 |
+| c:\Users\dark\Desktop\lxbishe\web\src\views\webadmin\adminindex.vue                  | Vue        |         77 |          0 |          6 |         83 |
+| c:\Users\dark\Desktop\lxbishe\web\src\views\webadmin\article\articlelist.vue         | Vue        |        114 |          0 |          2 |        116 |
+| c:\Users\dark\Desktop\lxbishe\web\src\views\webadmin\article\createarticle.vue       | Vue        |        104 |          4 |          3 |        111 |
+| c:\Users\dark\Desktop\lxbishe\web\src\views\webadmin\help\createhelp.vue             | Vue        |        167 |         12 |          1 |        180 |
+| c:\Users\dark\Desktop\lxbishe\web\src\views\webadmin\help\createhelplist.vue         | Vue        |        113 |          0 |          1 |        114 |
+| c:\Users\dark\Desktop\lxbishe\web\src\views\webadmin\job\company.vue                 | Vue        |        184 |          7 |          8 |        199 |
+| c:\Users\dark\Desktop\lxbishe\web\src\views\webadmin\myself.vue                      | Vue        |        257 |         11 |          2 |        270 |
+| c:\Users\dark\Desktop\lxbishe\web\src\views\webadmin\notice.vue                      | Vue        |        112 |          1 |          2 |        115 |
+| c:\Users\dark\Desktop\lxbishe\web\src\views\webadmin\oldstuff\createoldstuff.vue     | Vue        |        174 |         10 |          4 |        188 |
+| c:\Users\dark\Desktop\lxbishe\web\src\views\webadmin\oldstuff\createoldstufflist.vue | Vue        |        148 |          0 |          5 |        153 |
+| c:\Users\dark\Desktop\lxbishe\web\vue.config.js                                      | JavaScript |          5 |          0 |          0 |          5 |
+| c:\Users\dark\Desktop\lxbishe\数据库\changhangtong.sql                                  | SQL        |        426 |        122 |         38 |        586 |
+| Total                                                                                |            |     85,303 |        678 |      1,705 |     87,686 |
++--------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

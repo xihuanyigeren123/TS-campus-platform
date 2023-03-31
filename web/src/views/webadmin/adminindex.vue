@@ -1,10 +1,9 @@
 <template>
-  <div class="adminhome">
-    <div v-title data-title="  | 个人中心 "></div>
-
-    <div class="min">
-      <el-container style="min-height: 700px; border: 1px solid #eee">
-        <el-aside width="200px" style="    background-color: #fff;">
+  <div class="admin">
+    <div v-title data-title="  唐师人| 个人中心 "></div>
+    <div class="admin-home">
+      <el-container style=" border: 1px solid #eee">
+        <el-aside width="170px" style="background-color: #fff;">
           <el-menu router default-active="2" class="el-menu-vertical-demo">
             <el-menu-item index="/admin">
               <i class="el-icon-user-solid"></i>
@@ -12,7 +11,7 @@
             </el-menu-item>
             <el-menu-item index="/admin/myself">
               <i class="el-icon-user-solid"></i>
-              <span slot="title">账户管理</span>
+              <span slot="title">信息编辑</span>
             </el-menu-item>
 
             <el-submenu index="1">
@@ -20,27 +19,17 @@
                 <i class="el-icon-menu"></i>
                 <span>内容管理</span>
               </template>
-              <el-menu-item index="/admin/createhelplist">问答</el-menu-item>
+              <el-menu-item index="/admin/createhelplist">论坛</el-menu-item>
               <el-menu-item
                 index="/admin/createactivitylist"
                 :disabled="userinfo.realstate !== 3"
-                >活动</el-menu-item
-              >
+              >活动</el-menu-item>
               <el-menu-item
                 index="/admin/createoldstufflist"
                 :disabled="userinfo.realstate !== 3"
-                >二手</el-menu-item
-              >
-              <el-menu-item
-                index="/admin/company"
-                :disabled="userinfo.companystate !== 3"
-                >招聘</el-menu-item
-              >
-              <el-menu-item
-                index="/admin/articlelist"
-                :disabled="userinfo.realstate !== 3"
-                >文章/新闻</el-menu-item
-              >
+              >咸鱼</el-menu-item>
+              <el-menu-item index="/admin/company" :disabled="userinfo.companystate !== 3">招聘</el-menu-item>
+              <el-menu-item index="/admin/articlelist" :disabled="userinfo.realstate !== 3">资讯</el-menu-item>
             </el-submenu>
             <el-menu-item index="/admin/notice">
               <i class="el-icon-bell"></i>
@@ -51,6 +40,7 @@
 
         <el-container>
           <el-main>
+
             <router-view />
           </el-main>
         </el-container>

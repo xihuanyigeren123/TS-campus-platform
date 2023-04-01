@@ -24,7 +24,12 @@
                 </span>
               </el-col>
               <el-col :span="2" style="line-height:45px;text-align:center;">
-                <span style="background-color:#1989FA;color:white;padding:10px 20px;border-radius:5px;" @click="navigateToadmin"><i class="el-icon-edit"></i>发布</span>
+                <span
+                  style="background-color:#1989FA;color:white;padding:10px 20px;border-radius:5px;"
+                  @click="navigateToadmin"
+                >
+                  <i class="el-icon-edit"></i>发布
+                </span>
                 <!-- <el-dropdown>
                   <el-button type="primary">
                     发布中心
@@ -37,7 +42,7 @@
                     <el-dropdown-item>双皮奶</el-dropdown-item>
                     <el-dropdown-item>蚵仔煎</el-dropdown-item>
                   </el-dropdown-menu>
-                </el-dropdown> -->
+                </el-dropdown>-->
               </el-col>
               <el-col :span="2">
                 <div class="grid-content bg-purple" style="line-height:45px;">
@@ -113,8 +118,8 @@
               </template>
               <el-menu-item-group>
                 <!-- <template slot="title">分组一</template> -->
-                <el-menu-item index="/job">简要介绍</el-menu-item>
-                <el-menu-item index="1-2">校园风光</el-menu-item>
+                <el-menu-item index="/school">简要介绍</el-menu-item>
+                <el-menu-item index="/schoolview">校园风光</el-menu-item>
                 <el-menu-item index="1-2">校园风光</el-menu-item>
                 <el-menu-item index="1-2">校园风光</el-menu-item>
               </el-menu-item-group>
@@ -224,7 +229,7 @@
         <div class="button" v-else>
           <input type="button" value="注册" @click="registered" class="submit" />
         </div>
-        <div class="other" @click="join">{{ islogin ? '注册新用户' : '快去登录' }}</div>
+        <div class="other" @click="join">{{ islogin ? '注册新用户' : '登录' }}</div>
         <a class="iconfont" @click="close">&#xe608;</a>
       </div>
     </div>
@@ -306,6 +311,8 @@ export default {
     ...mapState({
       isclose: state => state.user.isclose,
       islogin: state => state.user.islogin,
+      islog: state => state.user.islog,
+
       avatar: state => state.user.userinfo.avatar,
       nickname: state => state.user.userinfo.nickname,
       unread: state => state.user.unread
@@ -468,14 +475,17 @@ export default {
       let num = Math.floor(Math.random() * 25)
       this.text = this.title[num]
     },
-    navigateToadmin(){
-  window.open(
+    navigateToadmin() {
+      if (this.islog) {
+        this.$message.error('您没有相关权限')
+        return
+      }
+      window.open(
         this.$router.resolve({
-          path: "/admin/createhelplist",
-        
+          path: '/admin/createhelplist'
         }).href,
-        "_blank"
-      );
+        '_blank'
+      )
     }
   },
   created() {
@@ -483,6 +493,7 @@ export default {
   },
   mounted() {
     this.getRandomTitle()
+    console.log(this.$store, 'this')
   }
 }
 </script>

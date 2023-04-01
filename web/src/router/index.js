@@ -31,6 +31,8 @@ import createoldstufflist from '../views/webadmin/oldstuff/createoldstufflist.vu
 import fankui from '../views/kefu/fankui.vue'
 import jubao from '../views/kefu/jubao.vue'
 import shensu from '../views/kefu/shensu.vue'
+import school from '../views/school/school.vue'
+import schoolview from '../views/school/schoolview.vue'
 import Router from 'vue-router'
 
 Vue.use(VueRouter)
@@ -52,6 +54,8 @@ const routes = [
     children: [
       { path: '', name: 'home', component: home, meta: { ispublic: true } },
       { path: 'help', name: 'help', component: help, meta: { ispublic: true } },
+      { path: 'school', name: 'school', component: school, meta: { ispublic: true } },
+      { path: 'schoolview', name: 'schoolview', component: schoolview, meta: { ispublic: true } },
       {
         path: 'help/:tag',
         name: 'help',

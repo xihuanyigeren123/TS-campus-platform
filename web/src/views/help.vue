@@ -1,10 +1,9 @@
 <template>
   <div class="helper">
-    <div v-title data-title="  学生信息交流平台| 问答"></div>
+    <div v-title data-title="  唐师人| 论坛"></div>
 
     <div class="page-container">
       <div class="contents">
-        <!-- start of page content -->
         <div class="page-contents">
           <div>
             <h3>
@@ -12,12 +11,12 @@
               校园论坛
             </h3>
           </div>
-          <!-- Basic Home Page Template -->
-          <ul class="tabs-nav">
+
+          <ul class="tabs">
             <li
               :class="
                   pagelistquery.lable === '' && pagelistquery.tag === ''
-                    ? 'active'
+                    ? 'actives'
                     : ''
                 "
               @click="changelable('')"
@@ -27,15 +26,16 @@
             <li
               v-for="(lable, id) in lables"
               :key="id"
-              :class="pagelistquery.lable === lable ? 'active' : ''"
+              :class="pagelistquery.lable === lable ? 'actives' : ''"
               @click="changelable(lable)"
             >
               <a>{{ lable }}</a>
             </li>
-            <li v-if="pagelistquery.tag != ''" class="active" @click="changelable('')">
+            <li v-if="pagelistquery.tag != ''" class="actives" @click="changelable('')">
               <a>{{ this.pagelistquery.tag }}</a>
             </li>
           </ul>
+        
           <section class="widget">
             <ul class="articles">
               <li class="article-entry standard" v-for="(item, id) in tableData" :key="id">
@@ -178,5 +178,154 @@ export default {
   width: 300px;
   background-color: #fff;
   overflow: hidden;
+}
+/* taeb-switch styles */
+.tabs {
+  background-color: #eee;
+  width: 300px;
+  border-radius: 25px;
+  padding: 5px;
+}
+
+.tabs:after {
+  content: '';
+  width: 50%;
+  top: 0;
+  transition: left cubic-bezier(0.88, -0.35, 0.565, 1.35) 0.4s;
+  /* border-radius: 27.5px; */
+  box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.1);
+  height: 100%;
+  z-index: 0;
+}
+
+.tabs.left:after {
+  left: 0;
+}
+
+.tabs.right:after {
+  left: 50%;
+}
+
+.tabs li {
+  display: inline-block;
+  /* width: 50%; */
+  border-radius: 20px;
+
+  padding: 12px 6px;
+  z-index: 1;
+  cursor: pointer;
+  transition: color 200ms;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: normal;
+  user-select: none;
+}
+
+.tabs li .actives {
+  color: #ffffff;
+  background-color: red;
+}
+
+.wrapper {
+  border-radius: 37px;
+  background-color: #f4f4f4;
+  padding: 8px;
+  width: 100%;
+  max-width: 316px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.taeb-switch {
+  position: relative;
+}
+
+.taeb-switch:after {
+  content: '';
+  position: absolute;
+  width: 50%;
+  top: 0;
+  transition: left cubic-bezier(0.88, -0.35, 0.565, 1.35) 0.4s;
+  border-radius: 27.5px;
+  box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.1);
+  background-color: #3d90ef;
+  height: 100%;
+  z-index: 0;
+}
+
+.taeb-switch.left:after {
+  left: 0;
+}
+
+.taeb-switch.right:after {
+  left: 50%;
+}
+
+.taeb-switch .taeb {
+  display: inline-block;
+  width: 50%;
+  padding: 12px 0;
+  z-index: 1;
+  position: relative;
+  cursor: pointer;
+  transition: color 200ms;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: normal;
+  user-select: none;
+}
+
+.taeb-switch .taeb.active {
+  color: #ffffff;
+}
+
+/* other styles */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+* {
+  outline: 0;
+}
+
+html,
+body {
+  min-height: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #ffffff;
+  color: #3d90ef;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+main {
+  width: 100%;
+}
+
+.wrapper {
+  border-radius: 37px;
+  background-color: #f4f4f4;
+  padding: 8px;
+  width: 100%;
+  max-width: 316px;
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>
